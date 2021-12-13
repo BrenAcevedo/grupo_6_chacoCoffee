@@ -21,5 +21,5 @@ Acevedo Brenda M., tengo 26 años, vivo en Barranqueras – Chaco.
 Soy estudiante de desarrollo web y con la realización de este proyecto busco poder afianzar todos los conocimientos adquiridos hasta el momento y los cuales vienen aparejados con la realización de cada sprint.
 
 
-arovich pablo : )
+Arovich Pablo, 33 años. Resistencia Chaco. administrador, desarrollador en proceso de aprendizaje  
 
