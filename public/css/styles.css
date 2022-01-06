@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(196, 240, 225);
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

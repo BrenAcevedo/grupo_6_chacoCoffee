@@ -1,0 +1,23 @@
+{
+  "name": "grupo_6_chacocoffee",
+  "version": "1.0.0",
+  "description": "Proyecto integrador DH Grupo 6",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrenAcevedo/grupo_6_chacoCoffee.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrenAcevedo/grupo_6_chacoCoffee/issues"
+  },
+  "homepage": "https://github.com/BrenAcevedo/grupo_6_chacoCoffee#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
