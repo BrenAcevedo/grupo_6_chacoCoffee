@@ -1,6 +1,6 @@
-# grupo_6_chacoCoffee
+# Grupo 6: ChacoCoffee
 
-# Proyecto del curso Full Stack Node Digital House
+# *Proyecto del curso Full Stack Node Digital House*
 
 ## Temática del Market Place
 
@@ -17,11 +17,14 @@ Según Kevin Kruse “La vida se trata de tener un impacto, no un ingreso”. Y 
 
 
 ## Integrantes del equipo
-Acevedo Brenda M., tengo 26 años, vivo en Barranqueras – Chaco.
+**Acevedo Brenda M.**, tengo 26 años, vivo en Barranqueras – Chaco.
 Soy estudiante de desarrollo web y con la realización de este proyecto busco poder afianzar todos los conocimientos adquiridos hasta el momento y los cuales vienen aparejados con la realización de cada sprint.
 
 
-arovich pablo : )
+**Arovich Pablo**, 33 años. Resistencia Chaco. administrador, desarrollador en proceso de aprendizaje  
+
+
+**Edgardo R. Jovanovich**, tengo 26 años, vivo en la ciudad de Resistencia, Chaco. A través de este proyecto espero adiquirir conocimientos sobre programación web y aprender a trabajar en equipo. 
 
 Tablero de Trello
 https://trello.com/b/RWUsWmj0/seguimiento-del-proyecto
