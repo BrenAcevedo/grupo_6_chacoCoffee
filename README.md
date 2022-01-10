@@ -23,3 +23,5 @@ Soy estudiante de desarrollo web y con la realización de este proyecto busco po
 
 arovich pablo : )
 
+Tablero de Trello
+https://trello.com/b/RWUsWmj0/seguimiento-del-proyecto
