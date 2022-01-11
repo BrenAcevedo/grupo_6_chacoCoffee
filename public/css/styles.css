@@ -242,6 +242,47 @@ main .product:hover {
     margin-top: 25px;
 }
 
+.form-registro, .form-login {
+    margin: 10px;
+    padding: 30px 0;
+}
+
+
+.form-registro div, .form-login div {
+    margin: 8px 0;
+}
+
+.form-registro label, .form-login label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 7px 0;
+}
+
+.form-registro input, .form-login input {
+    border: solid 1px;
+    border-radius: 5px;
+}
+
+.input-registro {
+    width: 100%;
+    padding: 5px;
+}
+
+form button {
+    border: none;
+    border-radius: 3px;
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+    color: white;
+    background-color: rgb(0, 0, 0);
+}
+
+.tittle-r-form {
+    text-align: center;
+}
+
 .logo-location {
     display: flex;
     flex-wrap: wrap;
@@ -317,6 +358,25 @@ main .product:hover {
         align-items: center;
     }
 
+    .input-registro {
+        max-width: 468px;
+        padding: 5px;
+    }
+    
+    .form-registro, .form-login {
+        text-align: center;
+    }
+
+    form button {
+        border: none;
+        border-radius: 3px;
+        max-width: 468px;
+        margin: 5px 0;
+        padding: 8px;
+        color: white;
+        background-color: rgb(0, 0, 0);
+    }
+
 }
 
 
@@ -374,6 +434,24 @@ main .product:hover {
         font-size: 19px;
     } 
 
+    .input-registro {
+        max-width: 468px;
+        padding: 5px;
+    }
+    
+    .form-registro, .form-login {
+        text-align: center;
+    }
+
+    form button {
+        border: none;
+        border-radius: 3px;
+        max-width: 468px;
+        margin: 5px 0;
+        padding: 8px;
+        color: white;
+        background-color: rgb(0, 0, 0);
+    }  
 
 }
 
