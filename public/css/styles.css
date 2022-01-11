@@ -283,6 +283,17 @@ form button {
     text-align: center;
 }
 
+.remember-pass {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.forget-pass {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
 .logo-location {
     display: flex;
     flex-wrap: wrap;
@@ -303,7 +314,7 @@ form button {
 }
 
 
-@media (min-width: 768px ) {
+@media (min-width: 768px) {
    
     .top-header {
         display: flex;

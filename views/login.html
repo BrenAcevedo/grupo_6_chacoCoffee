@@ -44,42 +44,24 @@
     <main>
         <section class="probando">
             <article class="tittle-r-form">
-                <h2>¡Crea tu cuenta!</h2>
-                <p>¡Ingresa tus datos para poder crear un usuario y disfrutar realizando tu compra con nosotros!</p>
+                <h2>Acceder</h2>
+                <p>¡Hola! Ingresá tu e-mail o usuario y contraseña</p>
             </article>
-            <form action="/" method="POST" class="form-registro">
+            <form action="/" method="POST" class="form-login">
                 <div>
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre" required class="input-registro">
+                    <label for="nombreUsuario">Nombre de usuario:</label>
+                <input type="text" name="nombreUsuario" id="nombreUsuario" class="input-registro" required>
                 </div>
-
-                <div>
-                    <label for="apellido">Apellido:</label>
-                    <input type="text" name="apellido" id="apellido" required class="input-registro">
-                </div>
-                
-                <div>
-                    <label for="usuario">Nombre de usuario:</label>
-                    <input type="text" name="usuario" id="usuario" required class="input-registro">
-                </div>
-
-               <div>
-                    <label for="domicilio">Domicilio:</label>
-                    <input type="text" name="domicilio" id="nombre" required class="input-registro">
-               </div>
-
                 <div>
                     <label for="contrasena">Contraseña:</label>
-                    <input type="password" name="contrasena" id="contrasena" required class="input-registro">
+                    <input type="password" name="contrasena" id="contrasena" class="input-registro" required>
                 </div>
-
-                <div>
-                    <label for="confirContrasena">Confirmar contraseña:</label>
-                    <input type="password" name="confirContrasena" id="confirContrasena" required class="input-registro">
+                <div class="remember-pass">
+                    <input type="checkbox" name="recuerdame" value="recuerdame">Recordar contraseña
                 </div>
-
-                <button type="submit">Enviar</button>
+                <button type="submit" class="enviar-login">Enviar</button>
             </form>
+            <p class="forget-pass"><a href="/">¿Olvidaste tu contraseña?</a></p>
         </section>
     </main>
     <footer>
