@@ -27,8 +27,5 @@ Soy estudiante de desarrollo web y con la realización de este proyecto busco po
 **Edgardo R. Jovanovich**, tengo 26 años, vivo en la ciudad de Resistencia, Chaco. A través de este proyecto espero adiquirir conocimientos sobre programación web y aprender a trabajar en equipo. 
 
 Tablero de Trello
-<<<<<<< HEAD
 https://trello.com/b/RWUsWmj0/seguimiento-del-proyecto
-=======
-https://trello.com/b/RWUsWmj0/seguimiento-del-proyecto
->>>>>>> 9917adce833d1c98fd2f10f4f0dd085ee1cc0243
+
