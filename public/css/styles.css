@@ -29,6 +29,12 @@ main article:hover {
 }
 
 .copy-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
     font-size: 20px;
     font-weight: bold;
     padding: 0px 10px;
@@ -37,7 +43,7 @@ main article:hover {
 }
 
 .top-header a {
-    color: black;
+    color: white;
 }
 
 .logo{
@@ -107,7 +113,7 @@ main article:hover {
     font-size: 17px;
 }
 
-.featured h3 {
+.featured h3, .about-us h3 {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
@@ -125,7 +131,7 @@ main article:hover {
     margin: 20px 0;
 }
 
-.products img {
+.products img, .product-description img {
     width: 100%;
 }
 
@@ -159,7 +165,7 @@ main article:hover {
 
 .carousel {
     display: flex;
-    margin: 15px 0;
+    margin: 50px 0;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -170,6 +176,15 @@ main article:hover {
 .carousel i {
     font-size: 40px;
 }
+
+.product-description p {
+    margin: 20px 0;
+}
+
+.p-description {
+    font-size: 15px;
+}
+
 
 .logo-location {
     display: flex;
@@ -250,7 +265,7 @@ main article:hover {
     .products {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     .products article {
@@ -276,7 +291,7 @@ main article:hover {
     }
 
     .logo {
-        width: 250px;
+        width: 150px;
     }
 
     .copy-header {
