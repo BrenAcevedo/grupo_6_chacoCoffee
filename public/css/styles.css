@@ -29,18 +29,14 @@ main article:hover {
 }
 
 .copy-header {
-    display: flex;
-    flex-wrap: wrap;
     font-size: 20px;
-}
-
-.copy-header div {
     font-weight: bold;
-    padding: 0px 15px;
+    padding: 0px 10px;
     margin: 15px 5px;
+
 }
 
-.copy-header a {
+.top-header a {
     color: black;
 }
 
@@ -113,18 +109,48 @@ main article:hover {
 
 .featured h3 {
     text-align: center;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .products {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 25px;
 }
 
 .products article {
     display: flex;
-    margin: 20px 0;
+    text-align: center;
     width: 50%;
+    margin: 20px 0;
+}
+
+.products img {
+    width: 100%;
+}
+
+.description {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.price {
+    font-size: 15px;
+    margin: 5px 0;
+    font-weight: bold;
+    color: rgb(0, 75, 75);
+}
+
+.buy-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 550;
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    margin: 10px;
+    padding: 10px 5px;
 }
 
 .about-us {
@@ -167,12 +193,7 @@ main article:hover {
 
 @media (min-width: 768px ) {
 
-    .copy-header {
-        max-width: 350px;
-        font-weight: 400px;
-        text-align: center;
-    } 
-
+   
     .top-header {
         display: flex;
         flex-wrap: nowrap;
@@ -195,6 +216,7 @@ main article:hover {
         width: 300px;
         margin: 10px 0px;
     }
+    
 
     .burger-menu, .cart {
         display: none;
@@ -202,7 +224,9 @@ main article:hover {
 
     .main-navbar {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
     }
 
     .main-navbar ul {
@@ -210,7 +234,7 @@ main article:hover {
     }
 
     .main-navbar li {
-        margin: 0 5px;
+        margin: 0 15px;
     }
 
     main article:hover {
@@ -230,7 +254,7 @@ main article:hover {
     }
 
     .products article {
-        width: 250px;
+        width: 350px;
         margin: 10px 0px;
     }
 
