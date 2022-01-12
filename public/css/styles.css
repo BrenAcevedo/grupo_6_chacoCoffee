@@ -379,18 +379,17 @@ form button {
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 460px) and (orientation:landscape) {
    
     .top-header {
         display: flex;
         flex-wrap: nowrap;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
     }
 
-
     .logo {
-        width: 30%;
+        width: 15%;
     }
 
     .products {
@@ -405,11 +404,11 @@ form button {
     }
     
 
-    .burger-menu, .cart {
+    /* .burger-menu, .cart {
         display: none;
-    }
+    } */
 
-    .main-navbar {
+    /* .main-navbar {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -422,7 +421,7 @@ form button {
 
     .main-navbar li {
         margin: 0 15px;
-    }
+    } */
 
     main .product:hover {
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
@@ -457,7 +456,26 @@ form button {
 
 
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
+
+    .burger-menu, .cart {
+        display: none;
+    }
+
+    .main-navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+    }
+
+    .main-navbar ul {
+        display: flex;
+    }
+
+    .main-navbar li {
+        margin: 0 15px;
+    }
 
     .products {
         display: flex;
