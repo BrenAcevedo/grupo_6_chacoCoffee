@@ -42,7 +42,7 @@
             <img width="100%" src="images/banner-cc.png" alt="Banner de ofertas">
     </section>
     <main>
-        <section>
+        <section class="cart-desktop">
             <article>
                 <div class="cart-title">
                     <h3>Producto</h3>
@@ -65,9 +65,33 @@
                         <i class="fas fa-plus"></i>
                     </div>
                 </div>  
+                <a href="/" class="buy-button"><i class="fas fa-long-arrow-alt-left"></i>SEGUIR COMPRANDO</a>
+                <button class="buy-button">Actualizar Carrito</button>
             </article>
-            <a href="/" class="buy-button"><i class="fas fa-long-arrow-alt-left"></i>SEGUIR COMPRANDO</a>
-            <button class="buy-button">Actualizar Carrito</button>
+            
+            <article class="total">
+                <h3>Total del carrito</h3>
+                <div class="subtotal">
+                    <h4>Subtotal</h4>
+                    <p>$3.500</p>
+                </div>
+                <h4 class="subtotal-e">Envío</h4>
+                <div class="form-e">
+                    <form action="/" method="POST">
+                        <div>
+                            <input type="radio" name="envio" id="envio" value="500">Envío a domicilio (todo el país): $500.00
+                        </div>
+                        <div>
+                            <input type="radio" name="envio" id="envio" value="0">Retiro por Local (Gratis)
+                        </div>
+                        <div class="subtotal">
+                            <p>Total</p>
+                            <p>$3.500</p> 
+                        </div>
+                        <button type="submit">Finalizar compra</button>
+                    </form>
+                </div>   
+            </article>
         </section>
     </main>
     <footer>

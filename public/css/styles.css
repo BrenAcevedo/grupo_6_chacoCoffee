@@ -337,8 +337,27 @@ form button {
 
 .quantity-cart input {
   width: 25%;
+  text-align: center;
 }
 
+.total h3 {
+    font-size: 20px;
+}
+
+.total h4, .total p {
+    font-size: 15px;
+}
+
+.subtotal {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.subtotal-e, .form-e {
+    margin: 5px;
+    
+}
 
 .logo-location {
     display: flex;
@@ -509,6 +528,31 @@ form button {
         color: white;
         background-color: rgb(0, 0, 0);
     }  
+
+    .cart-desktop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img-cart {
+        width: 40%;
+    }
+    
+    
+    .img-cart img {
+          width: 50%;
+    }
+
+    .total {
+        width: 60%;
+    }
+      
+    .img-cart .fa-times-circle {
+          position: relative;
+          bottom: 100%;
+          font-size: 25px;
+    }
 
 }
 
