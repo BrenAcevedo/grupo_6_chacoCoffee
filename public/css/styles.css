@@ -189,12 +189,12 @@ main .product:hover {
     font-size: 15px;
 }
 
-.description-tittle {
+.description-title {
     font-size: 20px;
     margin-top: 80px;
 }
 
-.subtittle {
+.subtitle {
     margin: 15px 0;
     font-size: 15px;
     font-weight: bold;
@@ -279,7 +279,7 @@ form button {
     background-color: rgb(0, 0, 0);
 }
 
-.tittle-r-form {
+.title-r-form {
     text-align: center;
 }
 
@@ -288,11 +288,57 @@ form button {
     font-size: 15px;
 }
 
-.forget-pass {
+.reset-pass {
     font-size: 15px;
     font-weight: bold;
     text-align: center;
 }
+
+.cart-title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.product-cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.descrip-cart {
+    width: 50%;
+}
+
+.descrip-cart i {
+    border: solid 1px black;
+}
+
+.img-cart {
+  width: 100%;
+}
+
+.img-cart img {
+    width: 100%;
+}
+
+.img-cart .fa-times-circle {
+    position: relative;
+    bottom: 100%;
+    font-size: 25px;
+}
+
+.quantity-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantity-cart input {
+  width: 25%;
+}
+
 
 .logo-location {
     display: flex;

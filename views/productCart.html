@@ -43,25 +43,31 @@
     </section>
     <main>
         <section>
-            <article class="title-r-form">
-                <h2>Acceder</h2>
-                <p>¡Hola! Ingresá tu e-mail o usuario y contraseña</p>
+            <article>
+                <div class="cart-title">
+                    <h3>Producto</h3>
+                    <h3>Cantidad</h3>
+                </div>
+                <div class="product-cart">
+                    <div class="img-cart">
+                        <i class="far fa-times-circle"></i>
+                        <img src="images/cafe-colombia.jpg" alt="Cafe de Colombia">
+                    </div>
+                    <div class="descrip-cart-d descrip-cart">
+                        <p>Café de Colombia</p>
+                        <p>AEROPRESS</p>
+                        <p>1 KILO</p>
+                        <p>1 x $3500</p>
+                    </div>
+                    <div class="descrip-cart quantity-cart">
+                        <i class="fas fa-minus"></i>
+                        <input type="text">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>  
             </article>
-            <form action="/" method="POST" class="form-login">
-                <div>
-                    <label for="nombreUsuario">Nombre de usuario:</label>
-                <input type="text" name="nombreUsuario" id="nombreUsuario" class="input-registro" required>
-                </div>
-                <div>
-                    <label for="contrasena">Contraseña:</label>
-                    <input type="password" name="contrasena" id="contrasena" class="input-registro" required>
-                </div>
-                <div class="remember-pass">
-                    <input type="checkbox" name="recuerdame" value="recuerdame">Recordar contraseña
-                </div>
-                <button type="submit" class="enviar-login">Enviar</button>
-            </form>
-            <p class="reset-pass"><a href="/">¿Olvidaste tu contraseña?</a></p>
+            <a href="/" class="buy-button"><i class="fas fa-long-arrow-alt-left"></i>SEGUIR COMPRANDO</a>
+            <button class="buy-button">Actualizar Carrito</button>
         </section>
     </main>
     <footer>
