@@ -14,11 +14,17 @@
             <div class="logo"> 
                 <img src="images/2333599.png" alt="Logo de Chaco Coffe">
             </div>
-            <div class="form-input" action="#" method="GET">
-                    <input class="search" type="search" name="busqueda" placeholder="Buscar en nuestra tienda"><i class="fa fa-search"></i>
-            </div>
-            <a href="#" class="copy-header">Registrarse</a> 
-            <a href="#" class="copy-header">Ingresar</a>
+            <form action="/" method="GET" class="form-input">
+                <input class="search" type="text" name="busqueda" placeholder="Buscar en nuestra tienda">
+                <button type="submit" class="fa fa-search search-button"></button>
+            </form>
+            <nav class="nav-rl">
+                <a href="#" class="copy-header">Registrarse</a> 
+                <a href="#" class="copy-header">Ingresar</a>
+                <a href="#" class="cart desk-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </nav>
         </div>
         <div class="burger-cart">
             <a href="#" class="burger-menu">
@@ -88,7 +94,7 @@
                             <p>Total</p>
                             <p>$3.500</p> 
                         </div>
-                        <button type="submit">Finalizar compra</button>
+                        <button type="submit" class="form-button">Finalizar compra</button>
                     </form>
                 </div>   
             </article>
