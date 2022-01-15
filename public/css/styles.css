@@ -5,9 +5,19 @@
     text-decoration: none;
 }
 
+.checkout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout-button {
+
+}
+
 body {
     font-size: 12px;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     background-color: rgb(255, 255, 255);
 }
 
@@ -154,7 +164,7 @@ main .product:hover {
     color: rgb(0, 75, 75);
 }
 
-.buy-button {
+.buy-button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -162,6 +172,18 @@ main .product:hover {
     font-size: 15px;
     background-color: black;
     color: white;
+    margin: 10px;
+    padding: 10px 5px;
+}
+
+.back-button{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 50%;
+    font-size: 15px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     margin: 10px;
     padding: 10px 5px;
 }
@@ -276,7 +298,7 @@ main .product:hover {
     padding: 5px;
 }
 
-.form-button {
+.form-button, .checkout-button {
     border: none;
     border-radius: 3px;
     width: 100%;
@@ -366,6 +388,10 @@ main .product:hover {
     
 }
 
+.fa-long-arrow-alt-left {
+    margin: 0 5px;
+}
+
 .logo-location {
     display: flex;
     flex-wrap: wrap;
@@ -381,7 +407,7 @@ main .product:hover {
     display: flex;
     font-size: 30px;
     margin: 15px 0;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
@@ -434,7 +460,7 @@ main .product:hover {
         text-align: center;
     }
 
-    .form-button {
+    .form-button, .checkout-button {
         border: none;
         border-radius: 3px;
         max-width: 468px;
@@ -442,6 +468,18 @@ main .product:hover {
         padding: 8px;
         color: white;
         background-color: rgb(0, 0, 0);
+    }
+
+    .back-button{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        width: 50%;
+        font-size: 15px;
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        margin: 10px;
+        padding: 10px 5px;
     }
 
 }
@@ -513,30 +551,12 @@ main .product:hover {
         margin: 10px 0px;
     }
 
-    .input-registro {
-        max-width: 468px;
-        padding: 5px;
-    }
-    
-    .form-registro, .form-login {
-        text-align: center;
-    }
-
-    .form-button {
-        border: none;
-        border-radius: 3px;
-        max-width: 468px;
-        margin: 5px 0;
-        padding: 8px;
-        color: white;
-        background-color: rgb(0, 0, 0);
-    }  
-
     .cart-desktop {
         display: flex;
         justify-content: center;
         align-items: center;
     }
+
 
     .img-cart {
         width: 40%;
@@ -544,17 +564,17 @@ main .product:hover {
     
     
     .img-cart img {
-          width: 50%;
+          width: 100%;
     }
 
     .total {
         width: 60%;
     }
+
       
     .img-cart .fa-times-circle {
-          position: relative;
-          bottom: 100%;
-          font-size: 25px;
+        position: relative;
+        left: 15px;
     }
 
 }
