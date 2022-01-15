@@ -5,16 +5,6 @@
     text-decoration: none;
 }
 
-.checkout{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.checkout-button {
-
-}
-
 body {
     font-size: 12px;
     font-family: 'Roboto', sans-serif;
@@ -186,6 +176,12 @@ main .product:hover {
     color: rgb(255, 255, 255);
     margin: 10px;
     padding: 10px 5px;
+}
+
+.checkout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .about-us {
