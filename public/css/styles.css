@@ -11,113 +11,10 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
-.main-header {
-    background-color: #ff9c59;
-    padding: 20px;
-}
+
 
 main .product:hover {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
-}
-
-
-.top-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.copy-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 0px 10px;
-    margin: 15px 5px;
-
-}
-
-.top-header a {
-    color: white;
-}
-
-.logo{
-    display: flex;
-    justify-content: center;
-    width: 30%;
-    height: 100px;
-    padding-right: 8px;
-}
-
-.form-input {
-    width: 70%;
-    display: flex;
-    justify-content: center;
-}
-
-.search {
-    height: 30px;
-    width: 100%;
-    border: white solid;
-    border-radius: 5px;
-    outline: none;
-}
-
-.search-button {
-    background-color: white;
-    border: white solid;
-    border-radius: 5px;
-    width: 30px;
-    position: relative;
-    margin-left: -35px;
-    border-left: rgb(0, 0, 0) solid 1px;
-}
-
-.fa-search {
-    font-size: 15px;
-}
-
-.nav-rl {
-    display: flex;
-}
-
-.burger-cart {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.burger-menu, .cart {
-    /* background-color: rgb(0, 0, 0); */
-    color: white;
-    max-width: 50px;
-    /* padding: 15px 15px;
-    border-radius: 8px; */
-    text-align: center;
-    font-size: 25px;
-}
-
-.desk-cart {
-    display: none;
-}
-
-.main-navbar {
-    display: none;
-}
-
-.main-navbar ul {
-    list-style: none;
-}
-
-.main-navbar a {
-    text-decoration: none;
-    color: #222222;
-    font-size: 18px;
 }
 
 .featured h3, .about-us h3 {
@@ -388,44 +285,8 @@ main .product:hover {
     margin: 0 5px;
 }
 
-.logo-location {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.footer-nav ul {
-    list-style: none;
-}
-
-.social-net {
-    display: flex;
-    font-size: 30px;
-    margin: 15px 0;
-    justify-content: center;
-    align-items: center;
-}
-
-
 @media (min-width: 768px) {
-   
-    .top-header {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .nav-rl {
-        margin: 15px;
-    }
     
-    .copy-header {
-        margin: 0 5px;
-        font-size: 20px;
-    }
-
     .products {
         display: flex;
         flex-wrap: wrap;
@@ -484,61 +345,7 @@ main .product:hover {
 
 }
 
-
-
 @media (min-width: 1024px) {
-
-    .burger-menu, .cart {
-        display: none;
-    }
-
-    .top-header {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .logo{
-        display: flex;
-        justify-content: space-between;
-        width: 250px;
-    }
-
-    .main-navbar {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: bold;
-        margin-top: 10px;
-    }
-
-    .main-navbar ul {
-        display: flex;
-    }
-
-    .main-navbar li {
-        margin: 0 30px;
-    }
-
-    .main-navbar a {
-        font-size: 19px;
-    } 
-
-    .form-input {
-        max-width: 600px;
-        display: flex;
-        justify-content: center;
-    }
-
-    .form-input input {
-        height: 40px;
-    }  
-    
-    .desk-cart {
-        display: flex;
-        margin-left: 30px;
-    }
 
     .products {
         display: flex;

@@ -1,0 +1,35 @@
+.logo-location {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo-f{
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    height: 100px;
+    padding-right: 8px;
+}
+
+.footer-nav ul {
+    list-style: none;
+}
+
+.social-net {
+    display: flex;
+    font-size: 30px;
+    margin: 15px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+
+    .logo-f{
+        display: flex;
+        justify-content: space-between;
+        width: 250px;
+    }
+}
