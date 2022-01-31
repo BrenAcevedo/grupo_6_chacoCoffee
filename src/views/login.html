@@ -13,10 +13,10 @@
 </head>
 <body>
     <header class="main-header">
-        <div class="top-header">
-            <div class="logo"> 
+        <section class="top-header">
+            <figure class="logo"> 
                 <img src="images/2333599.png" alt="Logo de Chaco Coffe">
-            </div>
+            </figure>
             <form action="/" method="GET" class="form-input">
                 <input class="search" type="search" name="busqueda" placeholder="Buscar en nuestra tienda">
                 <button type="submit" class="fa fa-search search-button"></button>
@@ -24,81 +24,74 @@
             <nav class="nav-rl">
                 <a href="/register" class="copy-header">Registrarse</a> 
                 <a href="/login" class="copy-header">Ingresar</a>
-                <a href="/cart" class="desk-cart">
-                    <i class="fas fa-shopping-cart"></i>
-                </a>
+                <a href="/cart" class="desk-cart"><i class="fas fa-shopping-cart"></i></a>
             </nav>
-        </div>
-        <div class="burger-cart">
+        </section>
+        <section class="burger-cart">
             <a href="#" class="burger-menu">
                 <i class="fa fa-bars burger"></i>
             </a>
             <a href="#" class="cart">
                 <i class="fas fa-shopping-cart"></i>
             </a>
-        </div>
+        </section>
         <nav class="main-navbar">
-            <ul>
-                <li><a href="/">Inicio</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Ventas</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
+            <a href="/">Inicio</a>
+            <a href="#">Productos</a>
+            <a href="#">Ventas</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Contacto</a>
         </nav>
     </header>
     <section class="banner">
-            <img width="100%" src="images/banner-cc.png" alt="Banner de ofertas">
+        <figure><img src="images/banner-cc.png" alt="Banner de ofertas"></figure>   
     </section>
     <main>
         <section>
-            <article class="title-r-form">
+            <header class="header-form">
                 <h2>Acceder</h2>
                 <p>¡Hola! Ingresá tu e-mail o usuario y contraseña</p>
-            </article>
+            </header>
             <form action="/" method="POST" class="form-login">
-                <div>
+                <fieldset>
                     <label for="nombreUsuario">Nombre de usuario:</label>
-                <input type="text" name="nombreUsuario" id="nombreUsuario" class="input-registro" required>
-                </div>
-                <div>
+                    <input type="text" name="nombreUsuario" id="nombreUsuario" class="input-registro" required>
                     <label for="contrasena">Contraseña:</label>
                     <input type="password" name="contrasena" id="contrasena" class="input-registro" required>
-                </div>
-                <div class="remember-pass">
-                    <input type="checkbox" name="recuerdame" value="recuerdame">Recordar contraseña
-                </div>
+                </fieldset>
+                <fieldset class="remember-pass">
+                    <input type="checkbox" name="recuerdame" id="recuerdame" value="recuerdame">
+                    <label for="recuerdame">Recordar contraseña</label>
+                </fieldset>
                 <button type="submit" class="enviar-login form-button">Enviar</button>
             </form>
-            <p class="reset-pass"><a href="/">¿Olvidaste tu contraseña?</a></p>
+            <footer class="reset-pass"><a href="/">¿Olvidaste tu contraseña?</a></footer>
         </section>
     </main>
     <footer>
         <section class="logo-location">
-            <div class="logo-f"> 
+            <figure class="logo-f"> 
                 <img src="images/2333599.png" alt="Logo de Chaco Coffe">
-            </div>
-            <div>
+            </figure>
+            <section>
                 <h4>Ubicación</h4>
                 <p>Lorem ipsum, dolor</p>
                 <p>Lorem ipsum dolor sit.</p>
                 <p>Lorem, ipsum dolor.</p>
-            </div>
+            </section>
             <nav class="footer-nav">
-                <ul>
-                    <li><a href="#">Locales</a></li>
-                    <li><a href="#">Formas de pago</a></li>
-                    <li><a href="#">Política de devolución</a></li>
-                    <li><a href="#">Términos y condiciones</a></li>
-                </ul>
+                <a href="#">Locales</a>
+                <a href="#">Formas de pago</a>
+                <a href="#">Política de devolución</a>
+                <a href="#">Términos y condiciones</a>
             </nav>
         </section>
-        <section class="social-net">
-            <i class="fab fa-facebook-square"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-whatsapp-square"></i>
-            <i class="fab fa-twitter-square"></i>  
-        </section>
+        <nav class="social-net">
+            <a href=""><i class="fab fa-facebook-square"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-whatsapp-square"></i></a>
+            <a href=""><i class="fab fa-twitter-square"></i> </a>
+        </nav>
         <p>Copyright © 2021-2022 Chaco Coffe</p>
     </footer>
 </body>

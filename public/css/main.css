@@ -4,6 +4,14 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
+article {
+    display: block;
+}
+
+.banner img {
+    width: 100%;
+}
+
 main .product:hover {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
@@ -155,20 +163,20 @@ main .product:hover {
     margin-top: 25px;
 }
 
+fieldset {
+    border: none;
+}
+
 .form-registro, .form-login {
     margin: 10px;
     padding: 30px 0;
-}
-
-
-.form-registro div, .form-login div {
-    margin: 8px 0;
 }
 
 .form-registro label, .form-login label {
     display: block;
     font-weight: bold;
     font-size: 14px;
+    margin-top: 10px;
     padding: 7px 0;
 }
 
@@ -192,13 +200,23 @@ main .product:hover {
     background-color: rgb(0, 0, 0);
 }
 
-.title-r-form {
+.header-form {
     text-align: center;
 }
 
 .remember-pass {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
     font-weight: bold;
     font-size: 15px;
+}
+
+.remember-pass input {
+    position: relative;
+    top: 5px;
+    right: 5px;
 }
 
 .reset-pass {
@@ -224,10 +242,6 @@ main .product:hover {
     width: 50%;
 }
 
-.descrip-cart i {
-    border: solid 1px black;
-}
-
 .img-cart {
   width: 100%;
 }
@@ -249,12 +263,13 @@ main .product:hover {
 }
 
 .quantity-cart input {
-  width: 25%;
+  width: 15%;
   text-align: center;
 }
 
 .total h3 {
     font-size: 20px;
+    margin-top: 55px;
 }
 
 .total h4, .total p {
@@ -264,12 +279,18 @@ main .product:hover {
 .subtotal {
     display: flex;
     justify-content: space-between;
-    margin: 5px;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 10px;
 }
 
 .subtotal-e, .form-e {
     margin: 5px;
     
+}
+
+.form-e fieldset {
+    padding: 0.2em;
 }
 
 .fa-long-arrow-alt-left {
@@ -305,7 +326,9 @@ main .product:hover {
     }
     
     .form-registro, .form-login {
-        text-align: center;
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .form-button, .checkout-button {
@@ -338,6 +361,13 @@ main .product:hover {
 
 @media (min-width: 1024px) {
 
+    .descripcion-producto {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+
     .products {
         display: flex;
         flex-wrap: wrap;
@@ -347,6 +377,12 @@ main .product:hover {
     .products article {
         width: 350px;
         margin: 10px 0px;
+    }
+
+    .form-registro, .form-login {
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .cart-desktop {
@@ -362,7 +398,7 @@ main .product:hover {
     
     
     .img-cart img {
-          width: 100%;
+        width: 100%;
     }
 
     .total {
@@ -373,6 +409,23 @@ main .product:hover {
     .img-cart .fa-times-circle {
         position: relative;
         left: 15px;
+    }
+
+}
+
+
+@media (min-width: 1600px) {
+    .img-cart {
+        width: 300px;
+    }
+    
+    
+    .img-cart img {
+        width: 200px;
+    }
+
+    .total {
+        width: 300px;
     }
 
 }

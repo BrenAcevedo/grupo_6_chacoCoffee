@@ -13,8 +13,8 @@
     padding-right: 8px;
 }
 
-.footer-nav ul {
-    list-style: none;
+.footer-nav a {
+    display: flex;
 }
 
 .social-net {
@@ -23,6 +23,10 @@
     margin: 15px 0;
     justify-content: center;
     align-items: center;
+}
+
+.social-net a, .footer-nav a{
+    color: black;
 }
 
 @media (min-width: 1024px) {
