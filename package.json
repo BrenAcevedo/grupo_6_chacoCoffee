@@ -2,7 +2,7 @@
   "name": "grupo_6_chacocoffee",
   "version": "1.0.0",
   "description": "Proyecto integrador DH Grupo 6",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "nodemon src/app.js -e js,mjs,json,ejs,css",
     "start": "node src/app.js"
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/BrenAcevedo/grupo_6_chacoCoffee#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.2"
   },
   "devDependencies": {
