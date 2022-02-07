@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../includes/head')  %>
+</head>
+<body>
+
+    <%- include('../includes/header')  %>
+
+    <section class="banner">
+        <figure><img src="images/banner-cc.png" alt="Banner de ofertas"></figure>   
+    </section>
+    <main>
+        <section>
+            <article class="header-form">
+                <h2>Crear producto</h2>
+            </article>
+            <section>
+                <form action="/" method="POST" class="form-registro">
+                    <fieldset>
+                        <label for="name">Nombre del producto:</label>
+                        <input type="text" name="name" id="name" required class="input-registro">
+                    </fieldset>
+    
+                    <fieldset>
+                        <label for="description">Descripción:</label>
+                        <textarea name="description" id="description" cols="30" rows="10" required class="input-registro"></textarea>
+                    </fieldset>
+                    
+                   <fieldset>
+                        <label for="weight">Peso:</label>
+                        <select name="weight" id="weight">
+                            <option value="">Elige una opción</option>
+                            <option value="250g">250g</option>
+                            <option value="1kg">1Kg</option>
+                        </select>
+                   </fieldset>
+
+                   <fieldset>
+                    <label for="category">Categoría:</label>
+                    <select name="category" id="category">
+                        <option value="">Elige una opción</option>
+                        <option value="grano">En Grano</option>
+                        <option value="espresso">Molido Espresso</option>
+                        <option value="filtro">Molido Filtro</option>
+                    </select>
+                    </fieldset>
+    
+                    <fieldset>
+                        <label for="price">Precio:</label>
+                        <input type="number" name="price" id="price" required class="input-registro">
+                    </fieldset>
+    
+                    <fieldset>
+                        <label for="image">Imagen:</label>
+                        <input type="file" name="image" id="image" required class="input-registro">
+                    </fieldset>
+    
+                    <button type="submit" class="form-button">Crear</button>
+                </form>
+            </section>
+            
+        </section>
+    </main>
+
+    <%- include('../includes/footer')  %>
+</body>
+</html>
