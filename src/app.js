@@ -21,6 +21,6 @@ app.use( express.static(uploadsPath) );
 
 app.use(require('./routes/web'));
 
-app.use(require('./routes/user'));
+app.use('/user',require('./routes/user'));
 
-app.use(require('./routes/product'));
+app.use('/product',require('./routes/product'));
