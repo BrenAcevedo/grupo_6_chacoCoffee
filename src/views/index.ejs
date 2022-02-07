@@ -1,48 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Chaco Coffe</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="css/components/reset.css">
-    <link rel="stylesheet" href="css/components/header.css">
-    <link rel="stylesheet" href="css/components/footer.css">
-    <link rel="stylesheet" href="css/main.css">
+    <%- include('./includes/head')  %> 
 </head>
 <body>
-    <header class="main-header">
-        <section class="top-header">
-            <figure class="logo"> 
-                <img src="images/2333599.png" alt="Logo de Chaco Coffe">
-            </figure>
-            <form action="/" method="GET" class="form-input">
-                <input class="search" type="search" name="busqueda" placeholder="Buscar en nuestra tienda">
-                <button type="submit" class="fa fa-search search-button"></button>
-            </form>
-            <nav class="nav-rl">
-                <a href="/register" class="copy-header">Registrarse</a> 
-                <a href="/login" class="copy-header">Ingresar</a>
-                <a href="/cart" class="desk-cart"><i class="fas fa-shopping-cart"></i></a>
-            </nav>
-        </section>
-        <section class="burger-cart">
-            <a href="#" class="burger-menu">
-                <i class="fa fa-bars burger"></i>
-            </a>
-            <a href="#" class="cart">
-                <i class="fas fa-shopping-cart"></i>
-            </a>
-        </section>
-        <nav class="main-navbar">
-            <a href="/">Inicio</a>
-            <a href="#">Productos</a>
-            <a href="#">Ventas</a>
-            <a href="#">Nosotros</a>
-            <a href="#">Contacto</a>
-        </nav>
-    </header>
+
+    <%- include('./includes/header')  %>
+
     <section class="banner">
         <figure><img src="images/banner-cc.png" alt="Banner de ofertas"></figure>   
     </section>
@@ -117,31 +81,7 @@
             </figure>
         </section>
     </main>
-    <footer>
-        <section class="logo-location">
-            <figure class="logo-f"> 
-                <img src="images/2333599.png" alt="Logo de Chaco Coffe">
-            </figure>
-            <section>
-                <h4>Ubicación</h4>
-                <p>Lorem ipsum, dolor</p>
-                <p>Lorem ipsum dolor sit.</p>
-                <p>Lorem, ipsum dolor.</p>
-            </section>
-            <nav class="footer-nav">
-                <a href="#">Locales</a>
-                <a href="#">Formas de pago</a>
-                <a href="#">Política de devolución</a>
-                <a href="#">Términos y condiciones</a>
-            </nav>
-        </section>
-        <nav class="social-net">
-            <a href=""><i class="fab fa-facebook-square"></i></a>
-            <a href=""><i class="fab fa-instagram"></i></a>
-            <a href=""><i class="fab fa-whatsapp-square"></i></a>
-            <a href=""><i class="fab fa-twitter-square"></i> </a>
-        </nav>
-        <p>Copyright © 2021-2022 Chaco Coffe</p>
-    </footer>
+
+    <%- include('./includes/footer')  %>
 </body>
 </html>
