@@ -18,37 +18,58 @@
             <section>
                 <form action="/" method="POST" class="form-registro">
                     <fieldset>
-                        <label for="name">Nombre del producto:</label>
-                        <input type="text" name="name" id="name" required class="input-registro">
+                        <label for="nombreProducto">Nombre del producto:</label>
+                        <input type="text" name="nombreProducto" id="nombreProducto" required class="input-registro">
                     </fieldset>
-    
+
                     <fieldset>
-                        <label for="description">Descripción:</label>
-                        <textarea name="description" id="description" cols="30" rows="10" required class="input-registro"></textarea>
+                        <label for="precio">Precio:</label>
+                        <input type="number" name="precio" id="precio" required class="input-registro">
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="descripcion">Descripción:</label>
+                        <textarea name="descripcion" id="descripcion" cols="30" rows="2" required class="input-registro"></textarea>
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="variedad">Variedad:</label>
+                        <input type="text" name="variedad" id="variedad" required class="input-registro">
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="olfato">Aspecto olfativo:</label>
+                        <input type="text" name="olfato" id="olfato" required class="input-registro">
                     </fieldset>
                     
                    <fieldset>
-                        <label for="weight">Peso:</label>
-                        <select name="weight" id="weight">
+                        <label for="peso">Peso:</label>
+                        <select name="peso" id="peso" class="input-registro">
                             <option value="">Elige una opción</option>
                             <option value="250g">250g</option>
+                            <option value="500g">500g</option>
                             <option value="1kg">1Kg</option>
                         </select>
                    </fieldset>
 
                    <fieldset>
-                    <label for="category">Categoría:</label>
-                    <select name="category" id="category">
+                    <label for="categoria">Categoría:</label>
+                    <select name="categoria" id="categoria" class="input-registro">
                         <option value="">Elige una opción</option>
                         <option value="grano">En Grano</option>
                         <option value="espresso">Molido Espresso</option>
                         <option value="filtro">Molido Filtro</option>
                     </select>
                     </fieldset>
-    
+
                     <fieldset>
-                        <label for="price">Precio:</label>
-                        <input type="number" name="price" id="price" required class="input-registro">
+                        <label for="info">Información:</label>
+                        <textarea name="info" id="info" cols="30" rows="5" required class="input-registro"></textarea>
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="packaging">Packaging:</label>
+                        <textarea name="packaging" id="packaging" cols="30" rows="5" required class="input-registro"></textarea>
                     </fieldset>
     
                     <fieldset>
