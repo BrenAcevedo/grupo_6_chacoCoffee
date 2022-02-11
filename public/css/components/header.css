@@ -19,7 +19,7 @@
     justify-content: center;
     width: 30%;
     height: 100px;
-    padding-right: 8px;
+    padding-right: 15px;
 }
 
 .form-input {
@@ -61,7 +61,7 @@
     background-color: black;
     color: white;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     padding: 0px 10px;
     margin: 15px 5px;
@@ -95,9 +95,12 @@
 .main-navbar a {
     text-decoration: none;
     color: #222222;
-    font-size: 18px;
+    font-size: 25px;
 }
 
+.main-navbar a:hover { 
+    color:#ffffff; 
+}
 
 @media (min-width: 768px) {
    
@@ -161,7 +164,7 @@
     }
 
     .main-navbar a {
-        font-size: 19px;
+        font-size: 25px;
     } 
 }
 

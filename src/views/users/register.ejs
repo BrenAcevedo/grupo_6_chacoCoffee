@@ -15,27 +15,64 @@
             <article class="header-form">
                 <h2>¡Crea tu cuenta!</h2>
                 <p>¡Ingresa tus datos para poder crear un usuario y disfrutar realizando tu compra con nosotros!</p>
+                <p>¿Ya tiene una cuenta?<a href="/user/login">¡Inicie sesión!</a></p>
             </article>
             <section>
                 <form action="/" method="POST" class="form-registro">
                     <fieldset>
                         <label for="nombre">Nombre:</label>
-                        <input type="text" name="nombre" id="nombre" required class="input-registro">
+                        <input type="text" name="nombre" id="nombre" placeholder="Ej: Juana" required class="input-registro">
                     </fieldset>
     
                     <fieldset>
                         <label for="apellido">Apellido:</label>
-                        <input type="text" name="apellido" id="apellido" required class="input-registro">
+                        <input type="text" name="apellido" id="apellido" placeholder="Ej: Perez" required class="input-registro">
                     </fieldset>
-                    
+
                     <fieldset>
-                        <label for="usuario">Nombre de usuario:</label>
-                        <input type="text" name="usuario" id="usuario" required class="input-registro">
+                        <label for="mail">Dirección de correo electrónico:</label>
+                        <input type="text" name="mail" id="mail" placeholder="Ej: juana@example.com" required class="input-registro">
                     </fieldset>
+
+                    <fieldset>
+                        <label for="provincia">Provincia:</label>
+                        <select name="provincia" id="provincia" class="input-registro">
+                            <option value="">Seleccione una provincia</option>
+                            <option value="buenosAires">Provincia de Buenos Aires</option>
+                            <option value="caba">Ciudad de Buenos Aires</option>
+                            <option value="catamarca">Catamarca</option>
+                            <option value="chaco">Chaco</option>
+                            <option value="chubut">Chubut</option>
+                            <option value="cordoba">Cordoba</option>
+                            <option value="corrientes">Corrientes</option>
+                            <option value="entreRios">Entre Rios</option>
+                            <option value="formosa">Formosa</option>
+                            <option value="jujuy">Jujuy</option>
+                            <option value="laPampa">La Pampa</option>
+                            <option value="laRioja">La Rioja</option>
+                            <option value="mendoza">Mendoza</option>
+                            <option value="misiones">Misiones</option>
+                            <option value="neuquen">Neuquen</option>
+                            <option value="rio Negro">Rio Negro</option>
+                            <option value="salta">Salta</option>
+                            <option value="sanJuan">San Juan</option>
+                            <option value="sanLuis">San Luis</option>
+                            <option value="santaCruz">Santa Cruz</option>
+                            <option value="santaFe">Santa Fe</option>
+                            <option value="santiagoEstero">Santiago del Estero</option>
+                            <option value="tierraFuego">Tierra del Fuego</option>
+                            <option value="tucuman">Tucuman</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="ciudad">Ciudad:</label>
+                        <input type="text" name="ciudad" id="nombre" placeholder="Ej: Córdoba" required class="input-registro">
+                   </fieldset>
     
                    <fieldset>
-                        <label for="domicilio">Domicilio:</label>
-                        <input type="text" name="domicilio" id="nombre" required class="input-registro">
+                        <label for="domicilio">Domicilio (Calle y Altura):</label>
+                        <input type="text" name="domicilio" id="nombre" placeholder="Ej: Av. 9 de Julio 1455" required class="input-registro">
                    </fieldset>
     
                     <fieldset>
