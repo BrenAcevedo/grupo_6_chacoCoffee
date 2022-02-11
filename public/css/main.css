@@ -192,7 +192,7 @@ fieldset {
     padding: 7px 0;
 }
 
-.form-registro input, .form-login input, fieldset select {
+.form-registro input, .form-login input, fieldset select, textarea {
     border: solid 1px;
     border-radius: 5px;
 }
