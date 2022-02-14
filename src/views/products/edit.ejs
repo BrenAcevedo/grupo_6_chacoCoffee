@@ -45,12 +45,17 @@
                     
                    <fieldset>
                         <label for="peso">Peso:</label>
-                        <p class="dato-anterior">Peso actual: <%= producto.peso %> </p>
                         <select name="peso" id="peso" class="input-registro">
                             <option value="">Elige una opción</option>
-                            <option value="250g">250g</option>
-                            <option value="500g">500g</option>
-                            <option value="1kg">1Kg</option>
+                            <option value="250g" <% if (producto.peso == '250g') { %>
+                                selected
+                               <% } %>>250g</option>
+                            <option value="500g" <% if (producto.peso == '500g') { %>
+                                selected
+                               <% } %>>500g</option>
+                            <option value="1kg" <% if (producto.peso == '1kg') { %>
+                                selected
+                               <% } %>>1Kg</option>
                         </select>
                    </fieldset>
 
@@ -61,12 +66,17 @@
 
                    <fieldset>
                     <label for="categoria">Categoría:</label>
-                    <p class="dato-anterior">Categoría actual:<%= producto.categoria %></p>
                     <select name="categoria" id="categoria" class="input-registro">
                         <option value="">Elige una opción</option>
-                        <option value="grano">En Grano</option>
-                        <option value="espresso">Molido Espresso</option>
-                        <option value="filtro">Molido Filtro</option>
+                        <option value="grano" <% if (producto.categoria == 'En Grano') { %>
+                         selected
+                        <% } %>>En Grano</option>
+                        <option value="espresso" <% if (producto.categoria == 'Molido Espresso') { %>
+                            selected
+                           <% } %>>Molido Espresso</option>
+                        <option value="filtro" <% if (producto.categoria == 'Molido Filtro') { %>
+                            selected
+                           <% } %>>Molido Filtro</option>
                     </select>
                     </fieldset>
 
