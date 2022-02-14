@@ -1,5 +1,6 @@
 const express = require('express');
 const {resolve} = require('path');
+const method = require('method-override');
 
 const app = express();
 
@@ -18,9 +19,11 @@ const uploadsPath = resolve(__dirname, '../uploads');
 app.use( express.static(publicPath) );
 app.use( express.static(uploadsPath) );
 
+app.use(express.urlencoded({extended: true})); 
+app.use(method('m'));
 
 app.use(require('./routes/web'));
 
 app.use('/user',require('./routes/user'));
 
-app.use('/product',require('./routes/product'));
+app.use('/products',require('./routes/product'));

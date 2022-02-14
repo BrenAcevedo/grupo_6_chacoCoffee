@@ -13,17 +13,17 @@
     <main>
         <section class="product-description">
             <article>
-                <div class="pruebando">
-                    <img src="/images/cafe-colombia.jpg" alt="Cafe de colombia">
-                </div>
+                <section>
+                    <img src="/products/<%= producto.imagen %>" alt="Cafe de colombia">
+                </section>
             </article>
             <article>
-                <div>
-                    <h3>Café de Colombia.</h3>
-                    <p class="price">$3.500</p>
-                    <h4>CAFÉ DE COLOMBIA. CATURRA.</h4>
-                    <p>Variedad: Caturra, Castillo, Typica</p>
-                    <p>Procesamiento: Lavado</p>
+                <section>
+                    <h3><%= producto.nombre %> </h3>
+                    <p class="price">$ <%= producto.precio %> </p>
+                    <h4><%= producto.descripcion %> </h4>
+                    <p>Variedad: <%= producto.variedad %> </p>
+                    <p>Aspeco olfativo: <%= producto.olfato %> </p>
                     <p>Altitud: 2.000 mts.</p>
                     <p>Finca La Estrella del Ostro, región de Huila, Colombia. Tostado en Bariloche.</p>
                     <p> Envíos a todo el país.</p>
@@ -39,24 +39,29 @@
                         </fieldset>
                         <fieldset class="quantity-form">
                             <label>Cantidad</label>
-                            <div class="quantity">
+                            <section class="quantity">
                                 <button type="button"><i class="fas fa-minus"></i></button>
                                 <input type="number">
                                 <button type="button"><i class="fas fa-plus"></i></button>
-                            </div>
+                            </section>
                         </fieldset>
                         <button type="submit" class="buy-button">Añadir al carrito</button>
                     </form>
-                </div>
+                    <a href="/products/<%= producto.id %>/edit" class="buy-button">Editar</a>
+                    <form action="/products/:id?m=DELETE" method="POST">
+                        <input type="hidden" name="id" value="<%= producto.id %>">
+                        <button type="submit" class="buy-button">Eliminar</button>
+                    </form>
+                </section>
             </article>
         </section>
         <section>
             <article class="descripcion-producto">
                 <h3 class="description-title">Descripción</h3>
-                <h4 class="subtitle">Información detallada - Café de Colombia.</h4>
-                <p class="p-description">Esta variedad de café se obtiene de la Finca La Estrella del Ostro, ubicada en la localidad de La Plata, en el departamento de Huila a 2000 metros sobre el nivel del mar. La recolección es selectiva, de forma manual y el procesamiento del café, como en la mayoría de los cafés de Colombia de esta altura, es lavado.</p>
+                <h4 class="subtitle">Información detallada - <%= producto.nombre %> </h4>
+                <p class="p-description"><%= producto.informacion %> </p>
                 <h4 class="subtitle">Packaging</h4>
-                <p class="p-description">La frescura del café es muy importante para poder disfrutar nuestro producto. Por eso envasamos todos nuestros cafés en bolsas de papel de aluminio con válvula desgasificadora dentro de los 60 minutos del tueste. Tostamos y despachamos nuestro café diariamente, y te garantizamos que recibirás el producto con menos de 15 días desde su elaboración. Tenemos RNE y RNPA para todos nuestros productos, que llevan la fecha de tueste sellada.</p>
+                <p class="p-description"><%= producto.packaging %> </p>
             </article>
         </section>
     </main>

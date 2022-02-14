@@ -16,34 +16,36 @@
                 <h2>Editar producto</h2>
             </article>
             <section>
-                <form action="/" method="POST" class="form-registro">
+                <form action="/products/:id?m=PUT" enctype="multipart/form-data" method="POST" class="form-registro">
+                    <input type="hidden" name="id" value="<%= producto.id %>">
                     <fieldset>
-                        <label for="nombreProducto">Nombre del producto:</label>
-                        <input type="text" name="nombreProducto" id="nombreProducto" required class="input-registro">
+                        <label for="nombre">Nombre del producto:</label>
+                        <input type="text" name="nombre" id="nombre" required class="input-registro" value="<%= producto.nombre %>">
                     </fieldset>
 
                     <fieldset>
                         <label for="precio">Precio:</label>
-                        <input type="number" name="precio" id="precio" required class="input-registro">
+                        <input type="number" name="precio" id="precio" required class="input-registro" value="<%= producto.precio %>">
                     </fieldset>
 
                     <fieldset>
                         <label for="descripcion">Descripción:</label>
-                        <textarea name="descripcion" id="descripcion" cols="30" rows="2" required class="input-registro"></textarea>
+                        <textarea name="descripcion" id="descripcion" cols="30" rows="2" required class="input-registro"><%= producto.descripcion%>"</textarea>
                     </fieldset>
 
                     <fieldset>
                         <label for="variedad">Variedad:</label>
-                        <input type="text" name="variedad" id="variedad" required class="input-registro">
+                        <input type="text" name="variedad" id="variedad" required value="<%= producto.variedad %>" class="input-registro">
                     </fieldset>
 
                     <fieldset>
                         <label for="olfato">Aspecto olfativo:</label>
-                        <input type="text" name="olfato" id="olfato" required class="input-registro">
+                        <input type="text" name="olfato" id="olfato" required value="<%= producto.olfato %>" class="input-registro">
                     </fieldset>
                     
                    <fieldset>
                         <label for="peso">Peso:</label>
+                        <p class="dato-anterior">Peso actual: <%= producto.peso %> </p>
                         <select name="peso" id="peso" class="input-registro">
                             <option value="">Elige una opción</option>
                             <option value="250g">250g</option>
@@ -53,7 +55,13 @@
                    </fieldset>
 
                    <fieldset>
+                        <label for="stock">Cantidad:</label>
+                        <input type="number" name="stock" id="stock" required value="<%= producto.stock %>" class="input-registro">
+                    </fieldset>
+
+                   <fieldset>
                     <label for="categoria">Categoría:</label>
+                    <p class="dato-anterior">Categoría actual:<%= producto.categoria %></p>
                     <select name="categoria" id="categoria" class="input-registro">
                         <option value="">Elige una opción</option>
                         <option value="grano">En Grano</option>
@@ -63,13 +71,13 @@
                     </fieldset>
 
                     <fieldset>
-                        <label for="info">Información:</label>
-                        <textarea name="info" id="info" cols="30" rows="5" required class="input-registro"></textarea>
+                        <label for="informacion">Información:</label>
+                        <textarea name="informacion" id="informacion" cols="60" rows="5" required><%= producto.informacion %></textarea>
                     </fieldset>
 
                     <fieldset>
                         <label for="packaging">Packaging:</label>
-                        <textarea name="packaging" id="packaging" cols="30" rows="5" required class="input-registro"></textarea>
+                        <textarea name="packaging" id="packaging" cols="30" rows="5" required class="input-registro"><%= producto.packaging %></textarea>
                     </fieldset>
     
                     <fieldset>

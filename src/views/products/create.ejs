@@ -16,7 +16,7 @@
                 <h2>Crear producto</h2>
             </article>
             <section>
-                <form action="/" method="POST" class="form-registro">
+                <form action="/products/create" method="POST" enctype="multipart/form-data" class="form-registro">
                     <fieldset>
                         <label for="nombre">Nombre del producto:</label>
                         <input type="text" name="nombre" id="nombre" required class="input-registro">
@@ -51,6 +51,11 @@
                             <option value="1kg">1Kg</option>
                         </select>
                    </fieldset>
+
+                   <fieldset>
+                        <label for="stock">Cantidad:</label>
+                        <input type="number" name="stock" id="stock" required class="input-registro">
+                    </fieldset>
 
                    <fieldset>
                     <label for="categoria">Categoría:</label>
