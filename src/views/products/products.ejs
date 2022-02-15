@@ -10,54 +10,16 @@
         <section class="featured">
             <header><h3>Productos</h3></header>
             <section class="products">
-                <article>
-                    <section class="product">
-                        <figure><img src="/images/cafe-colombia.jpg" alt="Café de colombia"></figure>
-                        <h4 class="description">Café de Colombia</h4>
-                        <p class="price">$3.500</p>
-                        <a href="#" class="buy-button">Comprar</a>
-                    </section>
-                </article>
-                <article>
-                    <section class="product">
-                        <figure><img src="/images/cafe-colombia.jpg" alt="Café de colombia"></figure>
-                        <h4 class="description">Café de Colombia</h4>
-                        <p class="price">$3.500</p>
-                        <a href="#" class="buy-button">Comprar</a>
-                    </section>
-                </article>
-                <article>
-                    <section class="product">
-                        <figure><img src="/images/cafe-colombia.jpg" alt="Café de colombia"></figure>
-                        <h4 class="description">Café de Colombia</h4>
-                        <p class="price">$3.500</p>
-                        <a href="#" class="buy-button">Comprar</a>
-                    </section>
-                </article>
-                <article>
-                    <section class="product">
-                        <figure><img src="/images/cafe-colombia.jpg" alt="Café de colombia"></figure>
-                        <h4 class="description">Café de Colombia</h4>
-                        <p class="price">$3.500</p>
-                        <a href="#" class="buy-button">Comprar</a>
-                    </section>
-                </article>
-                <article>
-                    <section class="product">
-                        <figure><img src="/images/cafe-colombia.jpg" alt="Café de colombia"></figure>
-                        <h4 class="description">Café de Colombia</h4>
-                        <p class="price">$3.500</p>
-                        <a href="#" class="buy-button">Comprar</a>
-                    </section>
-                </article>
-                <article>
-                    <section class="product">
-                        <figure><img src="/images/cafe-colombia.jpg" alt="Café de colombia"></figure>
-                        <h4 class="description">Café de Colombia</h4>
-                        <p class="price">$3.500</p>
-                        <a href="#" class="buy-button">Comprar</a>
-                    </section>
-                </article>
+                <% productos.forEach(p => { %>
+                    <article>
+                        <section class="product">
+                            <figure><img src="/products/<%= p.imagen %> " alt="Café de colombia" class="respeta"></figure>
+                            <h4 class="description"><%= p.nombre %> </h4>
+                            <p class="price">$<%=p.precio %> </p>
+                            <a href="/products/<%= p.id %> " class="buy-button">Comprar</a>
+                        </section>
+                    </article>
+                <% }) %>
             </section>
         </section>
     </main>

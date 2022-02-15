@@ -2,7 +2,7 @@
   {
     "id": 1,
     "nombre": "Café de Colombia Rosado",
-    "precio": 3222,
+    "precio": 3.222,
     "descripcion": "interdum mauris non ligula pellentesque ultrices phasellus id sapien in",
     "variedad": "condimentum",
     "olfato": "semper interdum mauris ullamcorper",
@@ -16,7 +16,7 @@
   {
     "id": 2,
     "nombre": "Café en grano Brasil",
-    "precio": 2527,
+    "precio": 2.527,
     "descripcion": "habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam",
     "variedad": "commodo",
     "olfato": "et ultrices posuere",
@@ -30,7 +30,7 @@
   {
     "id": 3,
     "nombre": "Café en grano Colombia",
-    "precio": 1658,
+    "precio": 1.658,
     "descripcion": "lacus at turpis donec posuere metus vitae ipsum aliquam",
     "variedad": "fusce lacus",
     "olfato": "rhoncus sed vestibulum sit",
@@ -44,7 +44,7 @@
   {
     "id": 4,
     "nombre": "Café en grano Descafeinado",
-    "precio": 3562,
+    "precio": 3.562,
     "descripcion": "faucibus orci luctus et ultrices posuere cubilia curae mauris",
     "variedad": "faucibus accumsan",
     "olfato": "nonummy maecenas tincidunt",
@@ -58,7 +58,7 @@
   {
     "id": 5,
     "nombre": "Café en grano Italiano",
-    "precio": 3658,
+    "precio": 3.658,
     "descripcion": "diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere",
     "variedad": "augue",
     "olfato": "in sagittis dui",
@@ -72,7 +72,7 @@
   {
     "id": 6,
     "nombre": "Café en grano Moka",
-    "precio": 2061,
+    "precio": 2.061,
     "descripcion": "ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo",
     "variedad": "varius",
     "olfato": "donec quis orci",
