@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "nombre": "Café de Colombia Rosado",
+    "nombre": "Café de Colombia",
     "precio": 3.222,
     "descripcion": "interdum mauris non ligula pellentesque ultrices phasellus id sapien in",
     "variedad": "condimentum",
@@ -15,7 +15,7 @@
   },
   {
     "id": 2,
-    "nombre": "Café en grano Brasil",
+    "nombre": "Café de Brasil",
     "precio": 2.527,
     "descripcion": "habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam",
     "variedad": "commodo",
@@ -29,7 +29,7 @@
   },
   {
     "id": 3,
-    "nombre": "Café en grano Colombia",
+    "nombre": "Café de Etiopía",
     "precio": 1.658,
     "descripcion": "lacus at turpis donec posuere metus vitae ipsum aliquam",
     "variedad": "fusce lacus",
@@ -43,7 +43,7 @@
   },
   {
     "id": 4,
-    "nombre": "Café en grano Descafeinado",
+    "nombre": "Café de Nicaragua",
     "precio": 3.562,
     "descripcion": "faucibus orci luctus et ultrices posuere cubilia curae mauris",
     "variedad": "faucibus accumsan",
@@ -57,7 +57,7 @@
   },
   {
     "id": 5,
-    "nombre": "Café en grano Italiano",
+    "nombre": "Café de Italia",
     "precio": 3.658,
     "descripcion": "diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere",
     "variedad": "augue",
@@ -71,7 +71,7 @@
   },
   {
     "id": 6,
-    "nombre": "Café en grano Moka",
+    "nombre": "Café Moka",
     "precio": 2.061,
     "descripcion": "ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo",
     "variedad": "varius",

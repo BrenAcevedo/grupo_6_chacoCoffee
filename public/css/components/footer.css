@@ -10,7 +10,7 @@
     justify-content: center;
     width: 30%;
     height: 100px;
-    margin-left: 10px;
+    margin-left: 25px;
 }
 
 footer h4 {
@@ -20,7 +20,7 @@ footer h4 {
 }
 
 .footer-nav {
-    margin: 20px 0;
+    margin: 35px 0;
 }
 
 .footer-nav a {
@@ -36,12 +36,22 @@ footer h4 {
     font-size: 15px;
 }
 
+.follow-us {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
 .social-net {
     display: flex;
     font-size: 30px;
-    margin: 20px 0;
-    justify-content: space-evenly;
+    margin-bottom: 30px;
+    justify-content: center;
     align-items: center;
+}
+
+.social-net a {
+    margin: 0 5px;
 }
 
 .footer-nav a{
@@ -65,9 +75,17 @@ footer h4 {
     color: rgb(195, 42, 163);
 }
 
+.copr {
+    margin-top: 40px;
+    font-size: 18px;
+    text-align: center;
+}
+
+
+
 @media (min-width: 1024px) {
 
-    footer h4 {
+    footer h4, .follow-us {
         font-size: 40px;
     }
 
@@ -79,13 +97,7 @@ footer h4 {
         font-size: 20px;
     }
 
-    .copr {
-        margin-top: 40px;
-        font-size: 18px;
-        text-align: center;
-    }
-
-    .logo-f{
+    .logo-f {
         display: flex;
         justify-content: space-between;
         width: 100px;
@@ -102,6 +114,6 @@ footer h4 {
 
     .social-net a {
         font-size: 45px;
-        margin: 15px 30px;
+        margin: 0 10px;
     }
 }

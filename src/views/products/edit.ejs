@@ -13,10 +13,10 @@
     <main>
         <section>
             <article class="header-form">
-                <h2>Editar producto</h2>
+                <h3 class="g-title">Editar producto</h2>
             </article>
             <section>
-                <form action="/products/:id?m=PUT" enctype="multipart/form-data" method="POST" class="form-registro">
+                <form action="/products/:id?m=PUT" enctype="multipart/form-data" method="POST" class="form-registro form-edit">
                     <input type="hidden" name="id" value="<%= producto.id %>">
                     <fieldset>
                         <label for="nombre">Nombre del producto:</label>
@@ -95,7 +95,7 @@
                         <input type="file" name="image" id="image" required class="input-registro">
                     </fieldset>
     
-                    <button type="submit" class="form-button">Crear</button>
+                    <button type="submit" class="form-button">Editar</button>
                 </form>
             </section>
             

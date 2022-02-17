@@ -7,9 +7,6 @@
 
     <%- include('../includes/header')  %>
 
-    <section class="banner">
-        <figure><img src="/images/banner-cc.png" alt="Banner de ofertas"></figure>   
-    </section>
     <main>
         <section class="product-description">
             <article>
@@ -18,22 +15,22 @@
                 </section>
             </article>
             <article>
-                <section>
-                    <h3><%= producto.nombre %> </h3>
-                    <p class="price">$ <%= producto.precio %> </p>
-                    <h4><%= producto.descripcion %> </h4>
-                    <p>Variedad: <%= producto.variedad %> </p>
-                    <p>Aspeco olfativo: <%= producto.olfato %> </p>
-                    <p>Altitud: 2.000 mts.</p>
-                    <p>Finca La Estrella del Ostro, región de Huila, Colombia. Tostado en Bariloche.</p>
-                    <p> Envíos a todo el país.</p>
-                    <p>GRATIS EN COMPRAS MAYORES A $3.500.</p>
+                <section class="detail">
+                    <h3 class="name-detail"><%= producto.nombre %></h3>
+                    <p class="price price-detail">$ <%= producto.precio %> </p>
+                    <h4><%= producto.descripcion %></h4>
+                    <p><span>Variedad:</span> <%= producto.variedad %> </p>
+                    <p><span>Aspeco olfativo:</span>  <%= producto.olfato %> </p>
+                    <p><span>Altitud:</span>  2.000 mts.</p>
+                    <p class="highlight">Finca La Estrella del Ostro, región de Huila, Colombia. Tostado en Bariloche.</p>
+                    <p class="highlight"> Envíos a todo el país.</p>
+                    <p class="highlight price">GRATIS EN COMPRAS MAYORES A $3.500.</p>
                     <form action="/" class="form-description">
                         <fieldset class="weight-form">
                             <label>Elegí el peso</label>
                             <select name="peso" id="peso">
                                 <option value="0">Elige una opción</option>
-                                <option value="1">1Kg</option>
+                                <option value="1">1kg</option>
                                 <option value="0.25">250g</option>
                             </select>
                         </fieldset>
@@ -45,17 +42,21 @@
                                 <button type="button"><i class="fas fa-plus"></i></button>
                             </section>
                         </fieldset>
-                        <button type="submit" class="buy-button">Añadir al carrito</button>
+                        <button type="submit" class="buy-button buy-button-d">Añadir al carrito</button>
                     </form>
-                    <a href="/products/<%= producto.id %>/edit" class="buy-button">Editar</a>
+                    <section class="edit-delete">
+                        <nav>
+                            <a href="/products/<%= producto.id %>/edit" class="buy-button">Editar</a>
+                        </nav>
                     <form action="/products/:id?m=DELETE" method="POST">
                         <input type="hidden" name="id" value="<%= producto.id %>">
                         <button type="submit" class="buy-button">Eliminar</button>
                     </form>
+                    </section>
                 </section>
             </article>
         </section>
-        <section>
+        <section class="product-info">
             <article class="descripcion-producto">
                 <h3 class="description-title">Descripción</h3>
                 <h4 class="subtitle">Información detallada - <%= producto.nombre %> </h4>
