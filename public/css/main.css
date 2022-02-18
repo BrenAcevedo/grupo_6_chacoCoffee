@@ -4,11 +4,6 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
-.background-form {
-    margin: 10px;
-    background-color: rgb(245, 240, 240);
-}
-
 .banner img {
     width: 100%;
 }
@@ -203,7 +198,7 @@ form button {
 
 .quantity {
     text-align: center;
-    
+
 }
 
 .quantity input {
@@ -218,6 +213,17 @@ form button {
 .product-description .buy-button {
     margin: auto;
     margin-top: 25px;
+}
+
+.info {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: rgb(3, 90, 3);
+}
+
+.background-form {
+    margin: 10px;
+    background-color: rgb(245, 240, 240);
 }
 
 fieldset {
@@ -374,10 +380,9 @@ fieldset {
 
     .featured h3, .about-us h3, .g-title {
         font-size: 2.5rem;
-        
     }
-    
-    
+
+
     .products {
         display: flex;
         flex-wrap: wrap;
@@ -394,17 +399,17 @@ fieldset {
         justify-content: center;
     }
 
-    .input-registro, textarea {
+    /* .input-registro, textarea {
         max-width: 500px;
         padding: 5px;
-    }
+    } */
 
     .background-form {
         width: 500px;
         margin-left: auto;
         margin-right: auto;
     }
-    
+
     .form-registro, .form-login {
         width: 500px;
         margin-left: auto;
@@ -414,32 +419,32 @@ fieldset {
     .descrip-cart {
         width: 40%;
     }
-    
+
     .img-cart {
       width: 60%;
     }
-    
+
     .img-cart img {
         width: 40%;
     }
-    
+
     .img-cart .fa-times-circle {
         position: relative;
         left: 30px;
         font-size: 25px;
     }
-    
+
     .quantity-cart {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    
+
     .quantity-cart input {
       width: 30px;
       text-align: center;
     }
-    
+
     .quantity-cart i {
         font-size: 1.2rem;
     }
@@ -473,7 +478,7 @@ fieldset {
         max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
-        
+
     }
 
     .products {
@@ -496,7 +501,7 @@ fieldset {
     .quantity-form label {
         padding-right: 25px;
     }
-    
+
     .weight-form select {
         width: 250px;
 
@@ -506,32 +511,32 @@ fieldset {
         font-size: 1.2rem;
         margin-right: 50px;
     }
-    
+
     .quantity {
         text-align: center;
     }
 
-    
+
     .quantity input {
         width: 50px;
         font-size: 20px;
-       
+
     }
-    
+
     .quantity i {
         font-size: 20px;
     }
-    
+
 
     .name-detail, .price-detail {
         font-size: 1.8rem;
-    
+
     }
-    
+
     .detail h4, .detail {
         font-size: 1.2rem;
     }
-    
+
     .p-description {
         font-size: 1.2rem;
     }
@@ -542,15 +547,17 @@ fieldset {
         margin: 10px 10px;
     }
 
-    .form-edit fieldset label {
-        font-size: 25px;
+    .edit-product {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .cart-desktop {
         display: flex;
         justify-content: center;
         align-items: center;
-        
+
     }
 
     .cart-title {
@@ -574,11 +581,11 @@ fieldset {
     .img-cart {
         width: 700px;
     }
-      
+
     .img-cart img {
         width: 200px;
     }
-      
+
     .img-cart .fa-times-circle {
         position: relative;
         left: 30px;
@@ -594,12 +601,12 @@ fieldset {
         justify-content: center;
         align-items: center;
     }
-    
+
     .quantity-cart input {
       width: 30px;
       text-align: center;
     }
-    
+
     .quantity-cart i {
         font-size: 1.2rem;
     }
@@ -617,25 +624,25 @@ fieldset {
         text-align: center;
         font-size: 50px;
         font-weight: 700;
-       
+
     }
-    
+
     .products {
         display: flex;
         flex-wrap: wrap;
         justify-content: start;
-    
+
     }
-    
+
     .products article {
         display: flex;
         justify-content: center;
         align-items:center;
         width: 25%;
         margin: 20px 0;
-    
+
     }
-    
+
     .products img, .product-description img {
         width: 100%;
     }
@@ -644,8 +651,8 @@ fieldset {
     .img-cart {
         width: 300px;
     }
-    
-    
+
+
     .img-cart img {
         width: 200px;
     }

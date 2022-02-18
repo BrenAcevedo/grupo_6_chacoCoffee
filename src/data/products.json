@@ -6,7 +6,11 @@
     "descripcion": "interdum mauris non ligula pellentesque ultrices phasellus id sapien in",
     "variedad": "condimentum",
     "olfato": "semper interdum mauris ullamcorper",
-    "peso": "250g",
+    "peso": [
+      "250g",
+      "500g",
+      "1kg"
+    ],
     "stock": 5,
     "categoria": "En Grano",
     "informacion": "sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque",
@@ -20,7 +24,9 @@
     "descripcion": "habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam",
     "variedad": "commodo",
     "olfato": "et ultrices posuere",
-    "peso": "500g",
+    "peso": [
+      "500g"
+    ],
     "stock": 5,
     "categoria": "Molido Filtro",
     "informacion": "primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea",
@@ -34,7 +40,9 @@
     "descripcion": "lacus at turpis donec posuere metus vitae ipsum aliquam",
     "variedad": "fusce lacus",
     "olfato": "rhoncus sed vestibulum sit",
-    "peso": "500g",
+    "peso": [
+      "500g"
+    ],
     "stock": 5,
     "categoria": "Molido Espresso",
     "informacion": "at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh",
@@ -48,7 +56,9 @@
     "descripcion": "faucibus orci luctus et ultrices posuere cubilia curae mauris",
     "variedad": "faucibus accumsan",
     "olfato": "nonummy maecenas tincidunt",
-    "peso": "250g",
+    "peso": [
+      "250g"
+    ],
     "stock": 5,
     "categoria": "Molido Espresso",
     "informacion": "ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin",
@@ -62,7 +72,9 @@
     "descripcion": "diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere",
     "variedad": "augue",
     "olfato": "in sagittis dui",
-    "peso": "1kg",
+    "peso": [
+      "1kg"
+    ],
     "stock": 5,
     "categoria": "Molido Filtro",
     "informacion": "suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel",
@@ -76,7 +88,9 @@
     "descripcion": "ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo",
     "variedad": "varius",
     "olfato": "donec quis orci",
-    "peso": "250g",
+    "peso": [
+      "250g"
+    ],
     "stock": 5,
     "categoria": "Molido Filtro",
     "informacion": "ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla",

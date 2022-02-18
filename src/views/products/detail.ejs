@@ -30,8 +30,9 @@
                             <label>Elegí el peso</label>
                             <select name="peso" id="peso">
                                 <option value="0">Elige una opción</option>
-                                <option value="1">1kg</option>
-                                <option value="0.25">250g</option>
+                                <% producto.peso.forEach(element => { %>
+                                    <option value="<%= element %>"><%= element %> </option>
+                                <% }) %>  
                             </select>
                         </fieldset>
                         <fieldset class="quantity-form">

@@ -6,100 +6,100 @@
 <body>
 
     <%- include('../includes/header')  %>
+    <article class="header-form">
+        <h3 class="g-title">Editar producto</h2>
+    </article>
+    <main class="edit-product">
+        <form action="/products/:id?m=PUT" enctype="multipart/form-data" method="POST" class="form-edit form-edicion">
+            <input type="hidden" name="id" value="<%= producto.id %>">
+            <section class="product-description">
+                <article>
+                    <section>
+                        <img src="/products/<%= producto.imagen %>" alt="Cafe de colombia">
+                    </section>
+                    <input type="file" name="image" id="image" class="input-registro">
+                </article>
+                <article>
+                    <section class="detail">
+                        <fieldset>
+                            <label for="nombre"><h3 class="name-detail"><%= producto.nombre %></h3></label>
+                            <input type="text" name="nombre" id="nombre" required class="input-registro" value="<%= producto.nombre %>">
+                        </fieldset>
 
-    <section class="banner">
-        <figure><img src="/images/banner-cc.png" alt="Banner de ofertas"></figure>   
-    </section>
-    <main>
-        <section>
-            <article class="header-form">
-                <h3 class="g-title">Editar producto</h2>
-            </article>
-            <section>
-                <form action="/products/:id?m=PUT" enctype="multipart/form-data" method="POST" class="form-registro form-edit">
-                    <input type="hidden" name="id" value="<%= producto.id %>">
-                    <fieldset>
-                        <label for="nombre">Nombre del producto:</label>
-                        <input type="text" name="nombre" id="nombre" required class="input-registro" value="<%= producto.nombre %>">
-                    </fieldset>
+                        <fieldset>
+                            <label for="precio"><p class="price price-detail">$ <%= producto.precio %></p></label>
+                            <input type="number" name="precio" id="precio" required class="input-registro" value="<%= producto.precio %>">
+                        </fieldset>
 
-                    <fieldset>
-                        <label for="precio">Precio:</label>
-                        <input type="number" name="precio" id="precio" required class="input-registro" value="<%= producto.precio %>">
-                    </fieldset>
+                        <fieldset>
+                            <label for="descripcion"><h4><%= producto.descripcion %></h4></label>
+                            <textarea name="descripcion" id="descripcion" cols="30" rows="2" required class="input-registro"><%= producto.descripcion%></textarea>
+                        </fieldset>
 
-                    <fieldset>
-                        <label for="descripcion">Descripción:</label>
-                        <textarea name="descripcion" id="descripcion" cols="30" rows="2" required class="input-registro"><%= producto.descripcion%>"</textarea>
-                    </fieldset>
+                        <fieldset>
+                            <label for="variedad"><p><span>Variedad: </span> <%= producto.variedad %></p></label>
+                            <input type="text" name="variedad" id="variedad" required value="<%= producto.variedad %>" class="input-registro">
+                        </fieldset>
+                        
+                        <fieldset>
+                           <label for="olfato"><p><span>Aspeco olfativo: </span><%= producto.olfato %></p></label>
+                           <input type="text" name="olfato" id="olfato" required value="<%= producto.olfato %>" class="input-registro">
+                        </fieldset>
 
-                    <fieldset>
-                        <label for="variedad">Variedad:</label>
-                        <input type="text" name="variedad" id="variedad" required value="<%= producto.variedad %>" class="input-registro">
-                    </fieldset>
-
-                    <fieldset>
-                        <label for="olfato">Aspecto olfativo:</label>
-                        <input type="text" name="olfato" id="olfato" required value="<%= producto.olfato %>" class="input-registro">
-                    </fieldset>
-                    
-                   <fieldset>
-                        <label for="peso">Peso:</label>
-                        <select name="peso" id="peso" class="input-registro">
+                        <fieldset>
+                            <label for="peso"><p><span>Pesos actuales: </span><% producto.peso.forEach(peso => { %>
+                                | <%= peso %> |
+                             <% }) %> </p></label>
+                            
+                            <select name="peso" id="peso" multiple class="input-registro">
+                                <option value="250g">250g</option>
+                                <option value="500g">500g</option>
+                                <option value="1kg">1Kg</option>
+                            </select>
+                       </fieldset>
+    
+                       <fieldset>
+                            <label for="stock"><span><p>Cantidad:</p></span></label>
+                            <input type="number" name="stock" id="stock" required value="<%= producto.stock %>" class="input-registro">
+                        </fieldset>
+    
+                       <fieldset>
+                        <label for="categoria"><span><p>Categoría:</p></span></label>
+                        <select name="categoria" id="categoria" class="input-registro">
                             <option value="">Elige una opción</option>
-                            <option value="250g" <% if (producto.peso == '250g') { %>
+                            <option value="En Grano" <% if (producto.categoria == 'En Grano') { %>
+                             selected
+                            <% } %>>En Grano</option>
+                            <option value="Molido Espresso" <% if (producto.categoria == 'Molido Espresso') { %>
                                 selected
-                               <% } %>>250g</option>
-                            <option value="500g" <% if (producto.peso == '500g') { %>
+                               <% } %>>Molido Espresso</option>
+                            <option value="Molido Filtro" <% if (producto.categoria == 'Molido Filtro') { %>
                                 selected
-                               <% } %>>500g</option>
-                            <option value="1kg" <% if (producto.peso == '1kg') { %>
-                                selected
-                               <% } %>>1Kg</option>
+                               <% } %>>Molido Filtro</option>
                         </select>
-                   </fieldset>
-
-                   <fieldset>
-                        <label for="stock">Cantidad:</label>
-                        <input type="number" name="stock" id="stock" required value="<%= producto.stock %>" class="input-registro">
-                    </fieldset>
-
-                   <fieldset>
-                    <label for="categoria">Categoría:</label>
-                    <select name="categoria" id="categoria" class="input-registro">
-                        <option value="">Elige una opción</option>
-                        <option value="grano" <% if (producto.categoria == 'En Grano') { %>
-                         selected
-                        <% } %>>En Grano</option>
-                        <option value="espresso" <% if (producto.categoria == 'Molido Espresso') { %>
-                            selected
-                           <% } %>>Molido Espresso</option>
-                        <option value="filtro" <% if (producto.categoria == 'Molido Filtro') { %>
-                            selected
-                           <% } %>>Molido Filtro</option>
-                    </select>
-                    </fieldset>
-
-                    <fieldset>
-                        <label for="informacion">Información:</label>
-                        <textarea name="informacion" id="informacion" cols="60" rows="5" required><%= producto.informacion %></textarea>
-                    </fieldset>
-
-                    <fieldset>
-                        <label for="packaging">Packaging:</label>
-                        <textarea name="packaging" id="packaging" cols="30" rows="5" required class="input-registro"><%= producto.packaging %></textarea>
-                    </fieldset>
-    
-                    <fieldset>
-                        <label for="image">Imagen:</label>
-                        <input type="file" name="image" id="image" required class="input-registro">
-                    </fieldset>
-    
-                    <button type="submit" class="form-button">Editar</button>
-                </form>
+                        </fieldset>
+                    </section>
+                </article>
             </section>
+            <fieldset>
+                <label for="informacion">
+                    <h4 class="subtitle">Información detallada - <%= producto.nombre %></h4>
+                    <p class="p-description"><%= producto.informacion %> </p>
+                </label>
+                <textarea name="informacion" id="informacion" cols="60" rows="5" required><%= producto.informacion %></textarea>
+            </fieldset>
             
-        </section>
+            <fieldset>
+                <label for="packaging">
+                    <h4 class="subtitle">Packaging</h4>
+                    <p class="p-description"><%= producto.packaging %></p>
+                </label>
+                <textarea name="packaging" id="packaging" cols="120" rows="5" required ><%= producto.packaging %></textarea>
+            </fieldset>
+            <button type="submit" class="form-button">Editar</button>
+        </form>
+        
+
     </main>
 
     <%- include('../includes/footer')  %>
