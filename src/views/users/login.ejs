@@ -7,14 +7,11 @@
 
     <%- include('../includes/header')  %>
 
-    <section class="banner">
-        <figure><img src="/images/banner-cc.png" alt="Banner de ofertas"></figure>   
-    </section>
     <main>
         <section>
-            <header class="header-form">
-                <h2>Acceder</h2>
-                <p>¡Hola! Ingresá tu e-mail o usuario y contraseña</p>
+            <header class="header-form background-form">
+                <h3 class="g-title">Acceder</h3>
+                <p class="detail">¡Hola! Ingresá tu e-mail o usuario y contraseña</p>
             </header>
             <form action="/" method="POST" class="form-login">
                 <fieldset>
@@ -27,9 +24,9 @@
                     <input type="checkbox" name="recuerdame" id="recuerdame" value="recuerdame">
                     <label for="recuerdame">Recordar contraseña</label>
                 </fieldset>
-                <button type="submit" class="enviar-login form-button">Enviar</button>
+                <button type="submit" class="form-button">Ingresar</button>
             </form>
-            <footer class="reset-pass"><a href="/">¿Olvidaste tu contraseña?</a></footer>
+            <footer class="reset-pass"><a class="reset-pass" href="/">¿Olvidaste tu contraseña?</a></footer>
         </section>
     </main>
 

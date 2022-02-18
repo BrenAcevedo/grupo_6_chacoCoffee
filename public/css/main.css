@@ -4,6 +4,11 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
+.background-form {
+    margin: 10px;
+    background-color: rgb(245, 240, 240);
+}
+
 .banner img {
     width: 100%;
 }
@@ -12,7 +17,7 @@ main .product:hover {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
-h3 {
+h3, .reset-pass {
     color: #3B90EC;
 }
 
@@ -227,7 +232,7 @@ fieldset {
 .form-registro label, .form-login label {
     display: block;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1rem;
     margin-top: 10px;
     padding: 7px 0;
 }
@@ -248,7 +253,7 @@ fieldset {
     width: 100%;
     font-size: 20px;
     font-weight: 700;
-    margin: 20px 0;
+    margin: 20px 0 0;
     padding: 8px;
     color: white;
     background-color: #3B90EC;
@@ -274,7 +279,10 @@ fieldset {
 }
 
 .reset-pass {
-    font-size: 15px;
+    text-decoration: underline;
+    margin-top: -20px;
+    margin-bottom: 50px;
+    font-size: 1rem;
     font-weight: bold;
     text-align: center;
 }
@@ -387,8 +395,14 @@ fieldset {
     }
 
     .input-registro, textarea {
-        max-width: 468px;
+        max-width: 500px;
         padding: 5px;
+    }
+
+    .background-form {
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .form-registro, .form-login {
@@ -526,12 +540,6 @@ fieldset {
         font-size: 20px;
         padding: 10px 10px;
         margin: 10px 10px;
-    }
-
-    .form-registro, .form-login {
-        width: 500px;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .form-edit fieldset label {
