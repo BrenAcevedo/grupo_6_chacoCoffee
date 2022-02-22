@@ -22,29 +22,44 @@
                 <article>
                     <section class="detail">
                         <fieldset>
-                            <label for="nombre"><h3 class="name-detail"><%= producto.nombre %></h3></label>
-                            <input type="text" name="nombre" id="nombre" required class="input-registro" value="<%= producto.nombre %>">
+                            <label for="nombre"><h3 class="name-detail">Nombre: <%= producto.nombre %></h3></label>
+                            <input type="text" name="nombre" id="nombre" class="input-registro" value="<%= producto.nombre %>">
                         </fieldset>
 
                         <fieldset>
-                            <label for="precio"><p class="price price-detail">$ <%= producto.precio %></p></label>
-                            <input type="number" name="precio" id="precio" required class="input-registro" value="<%= producto.precio %>">
+                            <label for="precio"><p class="price price-detail">Precio: $<%= producto.precio %></p></label>
+                            <input type="number" name="precio" id="precio" class="input-registro" value="<%= producto.precio %>">
                         </fieldset>
 
                         <fieldset>
-                            <label for="descripcion"><h4><%= producto.descripcion %></h4></label>
-                            <textarea name="descripcion" id="descripcion" cols="30" rows="2" required class="input-registro"><%= producto.descripcion%></textarea>
+                            <label for="descripcion"><p><span>Descripción: </span> <%= producto.descripcion %></p></label>
+                            <textarea name="descripcion" id="descripcion" cols="30" rows="2" class="input-registro"><%= producto.descripcion%></textarea>
                         </fieldset>
 
                         <fieldset>
                             <label for="variedad"><p><span>Variedad: </span> <%= producto.variedad %></p></label>
-                            <input type="text" name="variedad" id="variedad" required value="<%= producto.variedad %>" class="input-registro">
+                            <input type="text" name="variedad" id="variedad" value="<%= producto.variedad %>" class="input-registro">
                         </fieldset>
                         
                         <fieldset>
                            <label for="olfato"><p><span>Aspeco olfativo: </span><%= producto.olfato %></p></label>
-                           <input type="text" name="olfato" id="olfato" required value="<%= producto.olfato %>" class="input-registro">
+                           <input type="text" name="olfato" id="olfato" value="<%= producto.olfato %>" class="input-registro">
                         </fieldset>
+
+                        <fieldset>
+                            <label for="origen"><p><span>Origen: </span><%= producto.origen %></p></label>
+                            <input type="text" name="origen" id="origen" value="<%= producto.origen %>" class="input-registro">
+                         </fieldset>
+
+                         <fieldset>
+                            <label for="resena"><p><span>Reseña: </span><%= producto.resena %></p></label>
+                            <input type="text" name="resena" id="resena" value="<%= producto.resena %>" class="input-registro">
+                         </fieldset>
+
+                         <fieldset>
+                            <label for="marca"><p><span>Marca: </span><%= producto.marca %></p></label>
+                            <input type="text" name="marca" id="marca" value="<%= producto.marca %>" class="input-registro">
+                         </fieldset>
 
                         <fieldset>
                             <label for="peso"><p><span>Pesos actuales: </span><% producto.peso.forEach(peso => { %>
@@ -60,7 +75,7 @@
     
                        <fieldset>
                             <label for="stock"><span><p>Cantidad:</p></span></label>
-                            <input type="number" name="stock" id="stock" required value="<%= producto.stock %>" class="input-registro">
+                            <input type="number" name="stock" id="stock" value="<%= producto.stock %>" class="input-registro">
                         </fieldset>
     
                        <fieldset>
@@ -84,17 +99,15 @@
             <fieldset>
                 <label for="informacion">
                     <h4 class="subtitle">Información detallada - <%= producto.nombre %></h4>
-                    <p class="p-description"><%= producto.informacion %> </p>
                 </label>
-                <textarea name="informacion" id="informacion" cols="60" rows="5" required><%= producto.informacion %></textarea>
+                <textarea name="informacion" id="informacion" cols="60" rows="5"><%= producto.informacion %></textarea>
             </fieldset>
             
             <fieldset>
                 <label for="packaging">
                     <h4 class="subtitle">Packaging</h4>
-                    <p class="p-description"><%= producto.packaging %></p>
                 </label>
-                <textarea name="packaging" id="packaging" cols="120" rows="5" required ><%= producto.packaging %></textarea>
+                <textarea name="packaging" id="packaging" cols="120" rows="5"><%= producto.packaging %></textarea>
             </fieldset>
             <button type="submit" class="form-button">Editar</button>
         </form>

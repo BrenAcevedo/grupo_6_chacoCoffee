@@ -21,8 +21,8 @@
                     <h4><%= producto.descripcion %></h4>
                     <p><span>Variedad:</span> <%= producto.variedad %> </p>
                     <p><span>Aspeco olfativo:</span>  <%= producto.olfato %> </p>
-                    <p><span>Altitud:</span>  2.000 mts.</p>
-                    <p class="highlight">Finca La Estrella del Ostro, región de Huila, Colombia. Tostado en Bariloche.</p>
+                    <p><span><%= producto.origen %> </span></p>
+                    <p class="highlight"><%= producto.resena %></p>
                     <p class="highlight"> Envíos a todo el país.</p>
                     <p class="highlight price">GRATIS EN COMPRAS MAYORES A $3.500.</p>
                     <form action="/" class="form-description">

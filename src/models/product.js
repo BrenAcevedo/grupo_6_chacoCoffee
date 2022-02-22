@@ -13,9 +13,12 @@ const model = {
         id: model.list().length > 0 ? model.list().sort((a,b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0).pop().id + 1 : 1,  
         nombre: data.nombre,
         precio: Number(data.precio),
+        marca: data.marca,
         descripcion: data.descripcion,
         variedad: data.variedad,
         olfato: data.olfato,
+        origen: data.origen,
+        resena: data.resena,
         peso: data.peso && Array.isArray(data.peso) ? data.peso : [data.peso],
         stock: Number(data.stock),
         categoria: data.categoria,
@@ -34,9 +37,12 @@ const model = {
             if(producto.id == data.id) {
                 producto.nombre = data.nombre;
                 producto.precio = Number(data.precio);
+                producto.marca = data.marca,
                 producto.descripcion = data.descripcion,
                 producto.variedad = data.variedad,
                 producto.olfato = data.olfato,
+                producto.origen = data.origen,
+                producto.resena = data.resena,
                 producto.peso = data.peso && Array.isArray(data.peso) ? data.peso : [data.peso],
                 producto.stock = Number(data.stock),
                 producto.categoria = data.categoria,
