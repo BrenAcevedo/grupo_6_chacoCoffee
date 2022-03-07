@@ -14,15 +14,25 @@
                 <p class="detail">¡Hola! Ingresá tu e-mail o usuario y contraseña</p>
                 <p class="detail">¿No tienes una cuenta? <a href="/user/register">¡Registrate!</a></p>
             </header>
-            <form action="/" method="POST" class="form-login">
+            <form action="/user/login" method="POST" class="form-login">
                 <fieldset>
-                    <label for="nombreUsuario">Correo electrónico:</label>
-                    <input type="text" name="nombreUsuario" id="nombreUsuario" class="input-registro" required>
-                    <label for="contrasena">Contraseña:</label>
-                    <input type="password" name="contrasena" id="contrasena" class="input-registro" required>
+                    <label for="email">Correo electrónico:</label>
+                    <input type="text" name="email" id="email" class="input-registro">
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="danger">
+                            <%= errors.email.msg %> 
+                        </div>
+                    <% } %>
+                    <label for="pass">Contraseña:</label>
+                    <input type="password" name="pass" id="pass" class="input-registro">
+                    <% if (locals.errors && errors.pass) { %>
+                        <div class="danger">
+                            <%= errors.pass.msg %> 
+                        </div>
+                    <% } %>
                 </fieldset>
                 <fieldset class="remember-pass">
-                    <input type="checkbox" name="recuerdame" id="recuerdame" value="recuerdame">
+                    <input type="checkbox" name="remember_user" id="remember_user" value="recuerdame">
                     <label for="recuerdame">Recordar contraseña</label>
                 </fieldset>
                 <button type="submit" class="form-button">Ingresar</button>

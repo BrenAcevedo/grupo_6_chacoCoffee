@@ -15,76 +15,102 @@
                 <p class="detail">¿Ya tiene una cuenta? <a href="/user/login">¡Inicie sesión!</a></p>
             </article>
             <section>
-                <form action="/" method="POST" class="form-registro">
+                <form action="/user/register" method="POST" enctype="multipart/form-data" class="form-registro">
                     <fieldset>
                         <label for="nombre">Nombre:</label>
-                        <input type="text" name="nombre" id="nombre" placeholder="Ej: Juana" required class="input-registro">
+                        <input type="text" name="nombre" id="nombre" placeholder="Ej: Juana" class="input-registro <%= locals.errors && errors.nombre ? 'is-invalid' : null%>"
+                        value="<%= locals.oldData ? oldData.nombre : null%>" 
+                        >
                     </fieldset>
+                    <% if (locals.errors && errors.nombre) { %>
+                        <div class="danger">
+                          <%= errors.nombre.msg %>
+                        </div>
+                    <% } %>
     
                     <fieldset>
                         <label for="apellido">Apellido:</label>
-                        <input type="text" name="apellido" id="apellido" placeholder="Ej: Perez" required class="input-registro">
+                        <input type="text" name="apellido" id="apellido" placeholder="Ej: Perez"  class="input-registro <%= locals.errors && errors.apellido ? 'is-invalid' : null%>"
+                        value="<%= locals.oldData ? oldData.apellido : null%>" 
+                        >
                     </fieldset>
+                    <% if (locals.errors && errors.apellido) { %>
+                        <div class="danger">
+                          <%= errors.apellido.msg %>
+                        </div>
+                    <% } %>
 
                     <fieldset>
-                        <label for="mail">Dirección de correo electrónico:</label>
-                        <input type="text" name="mail" id="mail" placeholder="Ej: juana@example.com" required class="input-registro">
+                        <label for="email">Dirección de correo electrónico:</label>
+                        <input type="text" name="email" id="email" placeholder="Ej: juana@example.com"  class="input-registro <%= locals.errors && errors.email ? 'is-invalid' : null%>"
+                        value="<%= locals.oldData ? oldData.email : null%>" >
                     </fieldset>
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="danger">
+                          <%= errors.email.msg %>
+                        </div>
+                    <% } %>
 
                     <fieldset>
                         <label for="provincia">Provincia:</label>
-                        <select name="provincia" id="provincia" class="input-registro">
-                            <option value="">Seleccione una provincia</option>
-                            <option value="buenosAires">Provincia de Buenos Aires</option>
-                            <option value="caba">Ciudad de Buenos Aires</option>
-                            <option value="catamarca">Catamarca</option>
-                            <option value="chaco">Chaco</option>
-                            <option value="chubut">Chubut</option>
-                            <option value="cordoba">Cordoba</option>
-                            <option value="corrientes">Corrientes</option>
-                            <option value="entreRios">Entre Rios</option>
-                            <option value="formosa">Formosa</option>
-                            <option value="jujuy">Jujuy</option>
-                            <option value="laPampa">La Pampa</option>
-                            <option value="laRioja">La Rioja</option>
-                            <option value="mendoza">Mendoza</option>
-                            <option value="misiones">Misiones</option>
-                            <option value="neuquen">Neuquen</option>
-                            <option value="rio Negro">Rio Negro</option>
-                            <option value="salta">Salta</option>
-                            <option value="sanJuan">San Juan</option>
-                            <option value="sanLuis">San Luis</option>
-                            <option value="santaCruz">Santa Cruz</option>
-                            <option value="santaFe">Santa Fe</option>
-                            <option value="santiagoEstero">Santiago del Estero</option>
-                            <option value="tierraFuego">Tierra del Fuego</option>
-                            <option value="tucuman">Tucuman</option>
+                        <select name="provincia" id="provincia" class="input-registro  <%= locals.errors && errors.provincia ? 'is-invalido' : null%>">
+                                <option value="">Seleccione una provincia</option>
+                                <% 
+                                    let provincias = ["Provincia de Buenos Aires", "Ciudad de Buenos Aires", "Catamarca", "Chaco", "Chubut", 
+                                    "Cordoba", "Corrientes", "Entre Rios", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", 
+                                    "Neuquen", "Rio Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", 
+                                    "Santiago del Estero", "Tierra del Fuego", "Tucuman"];
+                                %> 
+                                <% for(const provincia of provincias) { %>
+                                <option 
+                                    value="<%= provincia %>"
+                                    <%= locals.oldData && (provincia === oldData.provincia) ? 'selected' : null %>><%= provincia %></option>
+                                
+                                <% } %>
                         </select>
                     </fieldset>
+                    <% if (locals.errors && errors.provincia) { %>
+                        <span class="danger">
+                          <%= errors.provincia.msg %>
+                        </span>
+                    <% } %>
 
                     <fieldset>
                         <label for="ciudad">Ciudad:</label>
-                        <input type="text" name="ciudad" id="nombre" placeholder="Ej: Córdoba" required class="input-registro">
+                        <input type="text" name="ciudad" id="nombre" placeholder="Ej: Córdoba"  class="input-registro <%= locals.errors && errors.ciudad ? 'is-invalid' : null%>">
                    </fieldset>
+             
     
                    <fieldset>
                         <label for="domicilio">Domicilio (Calle y Altura):</label>
-                        <input type="text" name="domicilio" id="nombre" placeholder="Ej: Av. 9 de Julio 1455" required class="input-registro">
+                        <input type="text" name="domicilio" id="nombre" placeholder="Ej: Av. 9 de Julio 1455"  class="input-registro <%= locals.errors && errors.domicilio ? 'is-invalid' : null%>">
                    </fieldset>
-
+                  
                    <fieldset>
                         <label for="avatar">Imagen de perfil:</label>
-                        <input type="file" name="avatar" id="avatar">
+                        <input type="file" name="avatar" id="avatar" class="<%= locals.errors && errors.avatar ? 'is-invalid' : null%>">
                     </fieldset>
+
+                    <% if (locals.errors && errors.avatar) { %>
+                        <div class="danger">
+                          <%= errors.avatar.msg %>
+                        </div>
+                    <% } %>
     
                     <fieldset>
-                        <label for="contrasena">Contraseña:</label>
-                        <input type="password" name="contrasena" id="contrasena" required class="input-registro">
+                        <label for="pass">Contraseña:</label>
+                        <input type="password" name="pass" id="pass"  class="input-registro <%= locals.errors && errors.pass ? 'is-invalid' : null%>">
                     </fieldset>
+
+                    <% if (locals.errors && errors.pass) { %>
+                        <div class="danger">
+                          <%= errors.pass.msg %>
+                        </div>
+                    <% } %>
     
                     <fieldset>
                         <label for="confirContrasena">Confirmar contraseña:</label>
-                        <input type="password" name="confirContrasena" id="confirContrasena" required class="input-registro">
+                        <input type="password" name="confirContrasena" id="confirContrasena"  class="input-registro <%= locals.errors && errors.confirContrasena ? 'is-invalid' : null%>">
                     </fieldset>
     
                     <button type="submit" class="form-button">Enviar</button>
