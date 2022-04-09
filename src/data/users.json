@@ -63,11 +63,11 @@
   "id": 6,
   "nombre": "Juana",
   "apellido": "Perez",
-  "email": "juana@gmail.com",
+  "email": "juana1@gmail.com",
   "provincia": "entreRios",
   "ciudad": "Croba",
   "domicilio": "sdsdf 43",
-  "pass": "$2a$10$AEpFekbwLjP/toKvxMkR4eA73OMmkv4LfVGu3BCiO/51.GAjkvbXq",
+  "pass": "$2a$10$AELjP/toKvxMkR4eA73OMmkv4LfVGu3BCiO/51.GAjkvbXq",
   "confirContrasena": "juana12345",
   "avatar": "1646671823371_img.jpg",
   "categoria": "usuario"
@@ -83,7 +83,7 @@
   "pass": "$2a$10$ENqCErssKglbq9dH9Fg.CerS83h4Q1uoTxqU7j0ZVNlOrzq6F8dGK",
   "confirContrasena": "juana12345",
   "avatar": "1646673350921_img.jpg",
-  "categoria": "usuario"
+  "categoria": "admin"
  },
  {
   "id": 8,
@@ -102,11 +102,11 @@
   "id": 9,
   "nombre": "Administrador",
   "apellido": "Administrador",
-  "email": "admin@chacocoffe.com",
+  "email": "admin@chacofe.com",
   "provincia": "Chaco",
   "ciudad": "Resistencia",
   "domicilio": "Av.  9 de Julio 1300",
-  "pass": "$2a$10$4Vce2M.rbPiM2XFUYoqRWuCF8btgGuVliU/cPF3i7Sywcm1LD5UYC",
+  "pass": "$2a$10$4Vce2M.rbPiM2XFUYoqRWuCF8btgGuVliU/cPF3i7Sywcm1",
   "confirContrasena": "admin",
   "avatar": "1646681375713_img.png",
   "categoria": "admin"

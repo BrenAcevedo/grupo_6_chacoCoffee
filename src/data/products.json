@@ -31,7 +31,9 @@
     "origen": "Italia",
     "resena": "sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium",
     "peso": [
-      null
+      "250g",
+      "500g",
+      "1kg"
     ],
     "stock": 5,
     "categoria": "Molido Filtro",
@@ -114,5 +116,29 @@
     "informacion": "ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla",
     "packaging": "interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis",
     "imagen": "cafe-colombia.jpg"
+  },
+  {
+    "id": 7,
+    "precio": null,
+    "peso": [
+      null
+    ],
+    "stock": 4,
+    "packaging": "sdf",
+    "imagen": [
+      "image-1648301198746-.png"
+    ]
+  },
+  {
+    "id": 8,
+    "precio": null,
+    "peso": [
+      null
+    ],
+    "stock": 6,
+    "packaging": "gh",
+    "imagen": [
+      "image-1648301314135-.png"
+    ]
   }
 ]

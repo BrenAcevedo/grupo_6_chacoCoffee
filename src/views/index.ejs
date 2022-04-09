@@ -14,12 +14,12 @@
         <section class="featured">
             <header><h3>Los más vendidos</h3></header>
             <section class="products">
-                <% productos.forEach(p => { %>
+                <% products.forEach(p => { %>
                     <article>
                         <section class="product">
-                            <figure><img src="/products/<%= p.imagen %> " alt="Café de colombia" class="respeta"></figure>
-                            <h4 class="description"><%= p.nombre %></h4>
-                            <p class="price">$<%=p.precio %> </p>
+                            <figure><img src="/products/<%= p.imageId.url %> " alt="Café de colombia" class="respeta"></figure>
+                            <h4 class="description"><%= p.name %></h4>
+                            <p class="price">$<%=p.price %> </p>
                             <a href="/products/<%= p.id %> " class="buy-button">Comprar</a>
                         </section>
                     </article>

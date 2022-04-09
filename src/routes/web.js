@@ -1,7 +1,9 @@
 const {Router} = require('express');
 const router = Router();
-const web = require('../controllers/web');
+const {all} = require('../controllers/web');
+const {search} = require('../controllers/product');
 
-router.get('/', web.index);
+router.get('/', all);
+router.get('/search', search);
 
 module.exports = router;

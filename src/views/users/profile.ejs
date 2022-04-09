@@ -8,7 +8,14 @@
     <%- include('../includes/header')  %>
 
     <main>
-        <h1>Bienvenido <%= locals.userLogged.nombre %> </h1>
+        <h1>Bienvenido <%= locals.userLogged.name %> </h1>
+        <p>Correo electrónico: <%= locals.userLogged.email %> </p>
+        <nav>
+            <a href="/user/<%= user.id %>/edit" class="buy-button">Editar perfil</a>
+        </nav>
+        <form action="/user/<%= user.id %>?m=DELETE" method="POST">
+            <button type="submit" class="buy-button">Eliminar cuenta</button>
+        </form>
     </main>
 
     <%- include('../includes/footer')  %>

@@ -1,6 +1,6 @@
 const {Router} = require('express');
 const router = Router();
-const {login,register, processRegister, loginProcess, profile, logout} = require('../controllers/user');
+const {login,register, processRegister, loginProcess, profile, logout, edit, update, remove} = require('../controllers/user');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const validationRegister = require('../middlewares/validationsRegister')
@@ -32,6 +32,12 @@ router.get('/login', guestMiddleware, login);
 router.post('/login', loginProcess);
 
 router.get('/profile/', authMiddleware, profile);
+
+router.get('/:id/edit', authMiddleware, update);
+
+router.put('/:id', uploadFile.single('avatar'),edit); 
+
+router.delete('/:id', authMiddleware, remove); 
 
 router.get('/logout/', logout);
 
