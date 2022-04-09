@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../includes/head')  %>
+</head>
+<body>
+
+    <%- include('../includes/header')  %>
+
+    <main>
+        <section>
+            <article class="header-form background-form">
+                <h3 class="g-title">Editar perfil</h3>
+            </article>
+            <section>
+                <form action="/user/<%= user.id %>?m=PUT" method="POST" enctype="multipart/form-data" class="form-registro">
+                    <fieldset>
+                        <label for="name">Nombre:</label>
+                        <input type="text" name="name" id="name"  class="input-registro" value="<%= user.name %>">
+                    </fieldset>
+                    
+                    <fieldset>
+                        <label for="lastName">Apellido:</label>
+                        <input type="text" name="lastName" id="lastName"  class="input-registro" value="<%= user.lastName %>">
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="email">Correo electrónico:</label>
+                        <input type="text" name="email" id="email"  class="input-registro" value="<%= user.email %>">
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="address">Domicilio (Calle y Altura):</label>
+                        <input type="text" name="address" id="address"  class="input-registro" value="<%= user.address %>">
+                    </fieldset>
+                  
+                   
+                    <fieldset>
+                        <label for="password">Nueva Contraseña:</label>
+                        <input type="password" name="password" class="input-registro" id="password">
+                    </fieldset>
+
+
+                    <fieldset>
+                        <label for="avatar">Imagen de perfil:</label>
+                        <input type="file" name="avatar" id="avatar">
+                    </fieldset>
+    
+    
+                    <button type="submit" class="form-button">Editar perfil</button>
+                </form>
+            </section>
+            
+        </section>
+    </main>
+
+    <%- include('../includes/footer')  %>
+</body>
+</html>
