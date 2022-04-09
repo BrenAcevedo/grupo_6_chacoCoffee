@@ -11,18 +11,18 @@
         <section class="product-description">
             <article>
                 <section>
-                    <img src="/products/<%= producto.imagen %>" alt="Cafe de colombia">
+                    <img src="/products/<%= product.imageId.url %>" alt="Cafe de colombia">
                 </section>
             </article>
             <article>
                 <section class="detail">
-                    <h3 class="name-detail"><%= producto.nombre %></h3>
-                    <p class="price price-detail">$ <%= producto.precio %> </p>
-                    <h4><%= producto.descripcion %></h4>
-                    <p><span>Variedad:</span> <%= producto.variedad %> </p>
-                    <p><span>Aspeco olfativo:</span>  <%= producto.olfato %> </p>
-                    <p><span><%= producto.origen %> </span></p>
-                    <p class="highlight"><%= producto.resena %></p>
+                    <h3 class="name-detail"><%= product.name %></h3>
+                    <p class="price price-detail">$ <%= product.price %> </p>
+                    <h4><%= product.description %></h4>
+                    <p><span>Variedad:</span> <%= product.variety %> </p>
+                    <p><span>Aspeco olfativo:</span>  <%= product.smell %> </p>
+                    <p><span><%= product.origin %> </span></p>
+                    <p class="highlight"><%= product.detail %></p>
                     <p class="highlight"> Envíos a todo el país.</p>
                     <p class="highlight price">GRATIS EN COMPRAS MAYORES A $3.500.</p>
                     <form action="/" class="form-description">
@@ -30,8 +30,8 @@
                             <label>Elegí el peso</label>
                             <select name="peso" id="peso">
                                 <option value="0">Elige una opción</option>
-                                <% producto.peso.forEach(element => { %>
-                                    <option value="<%= element %>"><%= element %> </option>
+                                <% product.weights.forEach(element => { %>
+                                    <option value="<%= element.id %>"><%= element.name %> </option>
                                 <% }) %>  
                             </select>
                         </fieldset>
@@ -45,13 +45,13 @@
                         </fieldset>
                         <button type="submit" class="buy-button buy-button-d">Añadir al carrito</button>
                     </form>
-                    <% if (locals.isLogged && locals.userLogged.categoria == 'admin') { %>
+                    <% if (locals.isLogged && locals.userLogged.isAdmin == '1') { %>
                         <section class="edit-delete">
                             <nav>
-                                <a href="/products/<%= producto.id %>/edit" class="buy-button">Editar</a>
+                                <a href="/products/<%= product.id %>/edit" class="buy-button">Editar</a>
                             </nav>
-                            <form action="/products/:id?m=DELETE" method="POST">
-                                <input type="hidden" name="id" value="<%= producto.id %>">
+                            <form action="/products/<%= product.id %>?m=DELETE" method="POST">
+                                <input type="hidden" name="id" value="<%= product.id %>">
                                 <button type="submit" class="buy-button">Eliminar</button>
                             </form>
                         </section>
@@ -62,10 +62,10 @@
         <section class="product-info">
             <article class="descripcion-producto">
                 <h3 class="description-title">Descripción</h3>
-                <h4 class="subtitle">Información detallada - <%= producto.nombre %> </h4>
-                <p class="p-description"><%= producto.informacion %> </p>
+                <h4 class="subtitle">Información detallada - <%= product.name %> </h4>
+                <p class="p-description"><%= product.information %> </p>
                 <h4 class="subtitle">Packaging</h4>
-                <p class="p-description"><%= producto.packaging %> </p>
+                <p class="p-description"><%= product.packaging %> </p>
             </article>
         </section>
     </main>
