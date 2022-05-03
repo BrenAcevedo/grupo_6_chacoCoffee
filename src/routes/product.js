@@ -5,11 +5,12 @@ const multer = require('multer');
 const folder = require('../middlewares/storage');
 const upload = (multer({storage: folder('products')}));
 const adminMiddleware = require('../middlewares/adminMiddleware');
+const validationsProduct = require('../middlewares/validations/validationsProduct');
 
 router.get('/', list);
 
 router.get('/create', adminMiddleware,create);
-router.post('/create', [upload.any()], storage); 
+router.post('/create', upload.single('image'), validationsProduct, storage); 
 // router.get('/probandodb', crear);
 // router.post('/probandodb', [upload.any()],guardar);
 // router.get('/probandodb/:id', editar);
@@ -24,7 +25,7 @@ router.get('/:id', detail);
 
 
 
-router.put('/:id', [upload.any()],edit); 
+router.put('/:id', upload.single('image'), validationsProduct,edit); 
 
 router.delete('/:id', adminMiddleware,remove); 
 
