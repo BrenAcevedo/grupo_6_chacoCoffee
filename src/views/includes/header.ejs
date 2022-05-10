@@ -1,7 +1,9 @@
+
 <header class="main-header">
     <section class="top-header">
         <figure class="logo"> 
-            <img src="/assets/nuevoLogo-removebg-preview.png" alt="Logo de Chaco Coffe">
+          
+          <a href="/" class="remove"><img src="/assets/nuevoLogo-removebg-preview.png" alt="Logo de Chaco Coffe"></a> 
         </figure>
         <form action="/search" method="GET" class="form-input">
             <input class="search" type="search" name="busqueda" placeholder="Buscar en nuestra tienda">
@@ -9,31 +11,52 @@
         </form>
         <% if (locals.isLogged) { %>
             <nav class="nav-rl">
-                <a href="/user/profile" class="copy-header">Mi cuenta</a> 
-                <img src="/images/avatars/<%= locals.userLogged.avatar %>"  alt=""> 
-                <a href="/user/logout" class="copy-header">Salir</a>
+                <a href="/user/profile" class="copy-header"><span class="material-symbols-outlined">
+                    account_circle
+                </span> Mi cuenta</a> 
+                <a href="/user/logout" class="copy-header">Salir<i class="material-symbols-outlined">
+                    logout
+                </i></a>
+                <a href="/products/cart" class="desk-cart"><i class="fas fa-shopping-cart">0</i></a>
             </nav>
+            <!-- <p>Hola, <%=  userLogged.name %> </p> -->
+            
             <% } else { %>
                 <nav class="nav-rl">
                     <a href="/user/register" class="copy-header">Registrarse</a> 
                     <a href="/user/login" class="copy-header">Ingresar</a>
-                    <a href="/products/cart" class="desk-cart"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="/products/cart" class="desk-cart"><i class="fas fa-shopping-cart">0</i></a>
                 </nav>
         <% } %>
     </section>
     <section class="burger-cart">
-        <a href="#" class="burger-menu">
-            <i class="fa fa-bars burger"></i>
+        <a id="boton-menu" class="burger-menu"><i class="fa fa-bars burger"></i></a>
+        <a id="boton-menu2">
+            <span class="material-symbols-outlined burger-menu" id="cancel-menu">
+            cancel
+            </span>
         </a>
         <a href="/products/cart" class="cart">
             <i class="fas fa-shopping-cart"></i>
         </a>
     </section>
+    <div id="menu">
+        <nav class="menu-link">
+            <a href="/">Inicio</a>
+            <a href="/products">Productos</a>
+            <a href="#">Ventas</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Contacto</a>
+        </nav> 
+    </div>
     <nav class="main-navbar">
         <a href="/">Inicio</a>
         <a href="/products">Productos</a>
         <a href="#">Ventas</a>
         <a href="#">Nosotros</a>
         <a href="#">Contacto</a>
+        <% if (locals.isLogged && locals.userLogged.isAdmin == '1') { %>
+            <a href="/products/create">Crear producto</a>
+        <% } %>
     </nav>
 </header>

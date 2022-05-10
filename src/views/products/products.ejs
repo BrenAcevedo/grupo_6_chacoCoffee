@@ -9,13 +9,29 @@
     <main>
         <section class="featured marcas">
             <header><h3>Productos</h3></header>
+            <form  action="/filter" method="GET" class="filter-products">
+                
+                <select name="marca" id="marca">
+                    <option value="">Filtrar por marca</option>
+                    <option value="1">marca1</option>
+                    <option value="2">marca2</option>
+                    <option value="3">marca3</option>
+                </select>
+                
+                <select name="precio" id="precio">
+                    <option value="">Filtrar por precio</option>
+                    <option value="DESC">Mayor precio</option>
+                    <option value="ASC">Menor precio</option>
+                </select>
+               <button type="submit" class="buy-button">Filtrar</button>
+            </form>
             <section class="products">
-                <% productos.forEach(p => { %>
+                <% products.forEach(p => { %>
                     <article>
                         <section class="product">
-                            <figure><img src="/products/<%= p.imagen %> " alt="Café de colombia" class="respeta"></figure>
-                            <h4 class="description"><%= p.nombre %> </h4>
-                            <p class="price">$<%=p.precio %> </p>
+                            <figure><img src="/products/<%= p.imageId.url %>" alt="Café de colombia" class="respeta"></figure>
+                            <h4 class="description"><%= p.name %> </h4>
+                            <p class="price">$<%=p.price %> </p>
                             <a href="/products/<%= p.id %> " class="buy-button">Comprar</a>
                         </section>
                     </article>

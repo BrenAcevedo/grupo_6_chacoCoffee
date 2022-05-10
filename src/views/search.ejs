@@ -1,16 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Busqueda</title>
+    <%- include('./includes/head')  %> 
 </head>
 <body>
-    <% products.forEach(element => { %>
-     <%= element.imageId.url %> 
- 
-    <% }) %>
- 
+
+    <%- include('./includes/header')  %>
+
+    <main>
+        <section class="featured">
+            <header><h3>Resultados de búsqueda para: <%= busqueda %></h3></header>
+            <% if (products.length > 0) { %>
+                <section class="products">
+                    <% products.forEach((p,i) => { %>
+                        <% if (i<6) { %>
+                            <article>
+                                <section class="product">
+                                    <figure><img src="/products/<%= p.imageId.url %> " alt="Café de colombia" class="respeta"></figure>
+                                    <h4 class="description"><%= p.name %></h4>
+                                    <p class="price">$<%=p.price %> </p>
+                                    <a href="/products/<%= p.id %> " class="buy-button">Comprar</a>
+                                </section>
+                            </article>
+                        <% } %>
+                    <% }) %>
+                </section>
+            <% } else { %>
+                <section>
+                    <section class="header-form background-form">
+                        <h3 class="g-title">OOPS!</h3>
+                        <p class="detail highlight">
+                            No se ha encontrado ningún producto
+                        </p>
+                        <ul class="suggestion">
+                            <li>•Compruebe los términos introducidos.</li>
+                            <li>•Intenta utilizar una sola palabra.</li>
+                            <li>•Utilice términos genéricos en la búsqueda.</li>
+                            <li>•Busque utilizar sinónimos al término deseado.</li>
+                        </ul>
+                        <a href="/"  class="buy-button highlight">Ir al inicio</a>
+                    </section>
+                </section>
+            <% } %> 
+        </section>
+    </main>
+
+    <%- include('./includes/footer')  %>
 </body>
 </html>

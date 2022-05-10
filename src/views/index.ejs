@@ -3,47 +3,60 @@
 <head>
     <%- include('./includes/head')  %> 
 </head>
+
+
 <body>
-
-    <%- include('./includes/header')  %>
-
-    <section class="banner">
-        <figure><img src="/images/banner-cc.png" alt="Banner de ofertas"></figure>   
+    <section class="load">
+        <section class="loader"></section>
     </section>
-    <main>
-        <section class="featured">
-            <header><h3>Los más vendidos</h3></header>
-            <section class="products">
-                <% products.forEach(p => { %>
-                    <article>
-                        <section class="product">
-                            <figure><img src="/products/<%= p.imageId.url %> " alt="Café de colombia" class="respeta"></figure>
-                            <h4 class="description"><%= p.name %></h4>
-                            <p class="price">$<%=p.price %> </p>
-                            <a href="/products/<%= p.id %> " class="buy-button">Comprar</a>
-                        </section>
-                    </article>
-                <% }) %>
-            </section>
-        </section>
-        <section class="about-us">
-            <h3>LA EMPRESA</h3>
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                Voluptatibus, corporis quia voluptas expedita, assumenda eveniet 
-                deleniti nisi quod necessitatibus similique possimus tempore magni explicabo inventore 
-                sunt eaque architecto. Ex, ab?
-            </p>
-        </section>
-        <section>
-            <figure class="carousel">
-                <i class="fas fa-chevron-left"></i>
-                <h4>Carousel</h4>
-                <i class="fas fa-chevron-right"></i>
-            </figure>
-        </section>
-    </main>
+    
+    
+    <section class="index">
+        <%- include('./includes/header')  %>
 
-    <%- include('./includes/footer')  %>
+        <section class="banner">
+            <figure><img src="/images/banner-cc.png" alt="Banner de ofertas"></figure>   
+        </section>
+        <main>
+            
+            <section class="featured">
+                <header><h3>Productos destacados</h3></header>
+                <section class="products">
+                    <% products.forEach(p => { %>
+                       
+                            <article>
+                                <section class="product">
+                                    <figure><img src="/products/<%= p.imageId.url %>" alt="Café de colombia" class="respeta"></figure>
+                                    <h4 class="description"><%= p.name %></h4>
+                                    <p class="price">$<%=p.price %> </p>
+                                    <a href="/products/<%= p.id %> " class="buy-button">Comprar</a>
+                                </section>
+                            </article>
+                     
+                    <% }) %>
+                </section>
+            </section>
+            <section class="about-us">
+                <h3>LA EMPRESA</h3>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                    Voluptatibus, corporis quia voluptas expedita, assumenda eveniet 
+                    deleniti nisi quod necessitatibus similique possimus tempore magni explicabo inventore 
+                    sunt eaque architecto. Ex, ab?
+                </p>
+            </section>
+            <section>
+                <figure class="carousel">
+                    <i class="fas fa-chevron-left"></i>
+                    <h4>Carousel</h4>
+                    <i class="fas fa-chevron-right"></i>
+                </figure>
+            </section>
+        </main>
+    
+        <%- include('./includes/footer')  %>
+    </section>
+
+   
 </body>
 </html>

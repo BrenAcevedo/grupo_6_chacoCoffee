@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../includes/head')  %>
+    <script src="/js/detail.js"></script>
 </head>
 <body>
 
@@ -10,7 +11,7 @@
     <main>
         <section class="product-description">
             <article>
-                <section>
+                <section class="img-detail">
                     <img src="/products/<%= product.imageId.url %>" alt="Cafe de colombia">
                 </section>
             </article>
@@ -38,9 +39,9 @@
                         <fieldset class="quantity-form">
                             <label>Cantidad</label>
                             <section class="quantity">
-                                <button type="button"><i class="fas fa-minus"></i></button>
-                                <input type="number">
-                                <button type="button"><i class="fas fa-plus"></i></button>
+                                <button type="button" id="minus"><i class="fas fa-minus"></i></button>
+                                <input type="number" value="1" min="1" max="<%= product.stock %>" id="quantity-input">
+                                <button type="button" id="plus"><i class="fas fa-plus"></i></button>
                             </section>
                         </fieldset>
                         <button type="submit" class="buy-button buy-button-d">Añadir al carrito</button>

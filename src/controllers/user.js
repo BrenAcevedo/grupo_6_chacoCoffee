@@ -7,7 +7,9 @@ const Op = Sequelize.Op;
 
 const controller = {
     register: (req,res) => {
-        return res.render('users/register');
+        return res.render('users/register',{
+            title: 'Registrarse',
+        });
     },
     processRegister: async (req, res) => {
         try {
@@ -58,17 +60,21 @@ const controller = {
             
             
      
-           res.redirect('users/login');
+           res.redirect('/user/login');
         }
         catch (error) {
             res.status(500).send({message: error.message});
         }
     },
     login: (req,res) => {
-        return res.render('users/login');
+        return res.render('users/login', {
+            title: 'Ingresar',
+        });
     },
     loginProcess: async (req, res) => {
         try {
+
+            const resultValidation = validationResult(req);
 
             let userToLogin =  await User.findOne({
       
@@ -76,6 +82,14 @@ const controller = {
                   email: req.body.email,
                 }
               });
+
+            
+            if (resultValidation.errors.length > 0) {  
+                return res.render('users/login', {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body, 
+                });
+            }
             
             
             if (userToLogin) {
@@ -92,10 +106,11 @@ const controller = {
                 }
                 return res.render('users/login', {
                     errors: {
-                        pass: {
+                        password: {
                             msg: 'La contraseña ingresada es incorrecta'
                         }
-                    }
+                    },
+                    oldData: req.body
                 
                 })
             }
@@ -105,7 +120,8 @@ const controller = {
                     email: {
                         msg: 'No se encuentra este email en nuestra base de datos'
                     }
-                }
+                },
+                oldData: req.body
             
             })
             
@@ -115,10 +131,26 @@ const controller = {
             res.status(500).send({message: error.message});
         }
     },
-    profile: (req,res) => {
-        return res.render('users/profile', {
-            user: req.session.userLogged
-        });
+    profile: async (req,res) => {
+        try {
+            
+            let userId = req.session.userLogged.id;
+            const user = await User.findByPk(userId, {include: {all: true}} );
+           
+            res.render('users/profile', {
+             user: user,
+             title: 'Mi cuenta',
+             })
+            
+ 
+         } catch (error) {
+             res.status(500).send({message: error.message});
+         }
+ 
+        // return res.render('users/profile', {
+        //     user: req.session.userLogged
+        // });
+        
     },
     update: async (req,res) => {
 
@@ -140,7 +172,17 @@ const controller = {
 
         try {
             
+           const resultValidation = validationResult(req);
            let user = await User.findByPk(req.params.id);
+
+           if (resultValidation.errors.length > 0) {  
+                return res.render('users/edit', {
+                    user: user,
+                    title: 'Editar perfil',
+                    errors: resultValidation.mapped(),
+                    oldData: req.body, 
+                });
+            }
 
            let avatar = await Image.create({
             url: req.file.filename
@@ -162,11 +204,27 @@ const controller = {
 
 
 
-          res.redirect('users/profile');
+          res.redirect('/user/profile');
 
         } catch (error) {
             res.status(500).send({message: error.message});
         }
+
+    },
+    deleteUser: async (req,res) => {
+
+        try {
+
+            let user = await User.findByPk(req.params.id);
+            
+            res.render('users/delete', {
+                user: user,
+                title: 'Eliminar cuenta',
+                })
+ 
+         } catch (error) {
+             res.status(500).send({message: error.message});
+         }
 
     },
     remove: async (req,res) => {

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../includes/head')  %>
+    <script src="/js/productValidation.js"></script>
 </head>
 <body>
 
@@ -16,88 +17,249 @@
                 <h3 class="g-title">Crear producto</h2>
             </article>
             <section>
-                <form action="/products/create" method="POST" enctype="multipart/form-data" class="form-registro form-edit">
+                <form action="/products/create" method="POST" enctype="multipart/form-data" class="form-registro form-edit" id="productForm">
                     <fieldset>
                         <label for="name">Nombre del producto:</label>
-                        <input type="text" name="name" id="name" required class="input-registro">
+                        <input type="text" name="name" id="name"  class="input-registro <%= locals.errors && errors.name ? 'is-invalid' : null%>"
+                        value="<%= locals.oldData ? oldData.name : null%>">
+                        <span class="material-symbols-outlined danger" id="iconProductName">
+                            cancel
+                        </span>
+                        <span id="errorProductName" class="danger"></span>
                     </fieldset>
+                    <% if (locals.errors && errors.name) { %>
+                        <span class="danger">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span>  <%= errors.name.msg %>
+                        </span>
+                    <% } %>
 
                     <fieldset>
                         <label for="price">Precio:</label>
-                        <input type="number" name="price" id="price" required class="input-registro">
+                        <input type="number" name="price" id="price" min="0"  class="input-registro <%= locals.errors && errors.price ? 'is-invalid' : null%>"
+                        value="<%= locals.oldData ? oldData.price : null%>">
+                        <span class="material-symbols-outlined danger" id="iconPrice">
+                            cancel
+                        </span>
+                        <span id="errorPrice" class="danger"></span>
                     </fieldset>
+                    <% if (locals.errors && errors.price) { %>
+                        <span class="danger">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span>  <%= errors.price.msg %>
+                        </span>
+                    <% } %>
 
                     <fieldset>
                         <label for="description">Descripción:</label>
-                        <textarea name="description" id="description" cols="30" rows="2" required class="input-registro"></textarea>
+                        <textarea name="description" id="description" cols="30" rows="2"  class="input-registro <%= locals.errors && errors.description ? 'is-invalid' : null%>"><%= locals.oldData ? oldData.description : ''%></textarea>
+                        <span class="material-symbols-outlined danger" id="iconDescription">
+                            cancel
+                        </span>
+                        <span id="errorDescription" class="danger"></span>
                     </fieldset>
+                    <% if (locals.errors && errors.description) { %>
+                        <span class="danger">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span>  <%= errors.description.msg %>
+                        </span>
+                    <% } %>
 
                     <fieldset>
                         <label for="variety">Variedad:</label>
-                        <input type="text" name="variety" id="variety" required class="input-registro">
+                        <input type="text" name="variety" id="variety"  class="input-registro <%= locals.errors && errors.variety ? 'is-invalid' : null%>"
+                        value="<%= locals.oldData ? oldData.variety : null%>">
+                        <span class="material-symbols-outlined danger" id="iconVariety">
+                            cancel
+                        </span>
+                        <span id="errorVariety" class="danger"></span>
                     </fieldset>
+                    <% if (locals.errors && errors.variety) { %>
+                        <span class="danger">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span>  <%= errors.variety.msg %>
+                        </span>
+                    <% } %>
 
                     <fieldset>
                         <label for="smell">Aspecto olfativo:</label>
-                        <input type="text" name="smell" id="smell" required class="input-registro">
+                        <input type="text" name="smell" id="smell"  class="input-registro <%= locals.errors && errors.smell ? 'is-invalid' : null%>"
+                        value="<%= locals.oldData ? oldData.smell : null%>">
+                        <span class="material-symbols-outlined danger" id="iconSmell">
+                            cancel
+                        </span>
+                        <span id="errorSmell" class="danger"></span>
                     </fieldset>
+                    <% if (locals.errors && errors.smell) { %>
+                        <span class="danger">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span>  <%= errors.smell.msg %>
+                        </span>
+                    <% } %>
 
                     <fieldset>
                         <label for="origin">Origen:</label>
-                        <input type="text" name="origin" id="origin" required class="input-registro">
+                        <input type="text" name="origin" id="origin"  class="input-registro <%= locals.errors && errors.origin? 'is-invalid' : null%>"
+                        value="<%= locals.oldData ? oldData.origin: null%>">
+                        <span class="material-symbols-outlined danger" id="iconOrigin">
+                            cancel
+                        </span>
+                        <span id="errorOrigin" class="danger"></span>
                      </fieldset>
+                     <% if (locals.errors && errors.origin) { %>
+                        <span class="danger">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span>  <%= errors.origin.msg %>
+                        </span>
+                    <% } %>
 
                      <fieldset>
                         <label for="detail">Reseña:</label>
-                        <input type="text" name="detail" id="detail" required class="input-registro">
+                        <input type="text" name="detail" id="detail"  class="input-registro <%= locals.errors && errors.detail ? 'is-invalid' : null%>"
+                        value="<%= locals.oldData ? oldData.detail : null%>">
+                        <span class="material-symbols-outlined danger" id="iconDetail">
+                            cancel
+                        </span>
+                        <span id="errorDetail" class="danger"></span>
                      </fieldset>
-
+                     <% if (locals.errors && errors.detail) { %>
+                        <span class="danger">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span>  <%= errors.detail.msg %>
+                        </span>
+                    <% } %>
+                     
                      <fieldset>
                         <label for="brand"><p><span>Marca:</label>
-                            <select name="brand" id="brand" class="input-registro">
+                            <select name="brand" id="brand" class="input-registro <%= locals.errors && errors.brand ? 'is-invalid' : null%>"
+                                value="<%= locals.oldData ? oldData.brand : null%>">
                                 <% brand.forEach(brand => { %>
                                  <option value="<%= brand.id %>"><%= brand.name %></option>
                                 <% }) %>
                             </select>
                      </fieldset>
+                     <% if (locals.errors && errors.brand) { %>
+                        <span class="danger">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span>  <%= errors.brand.msg %>
+                        </span>
+                    <% } %>
                     
                    <fieldset>
                         <label for="weight">Peso:</label>
-                        <select name="weight" id="weight" multiple class="input-registro">
+                        <select name="weight" id="weight" multiple class="input-registro <%= locals.errors && errors.weight ? 'is-invalid' : null%>"
+                            value="<%= locals.oldData ? oldData.weight : null%>">
                             <% weight.forEach(weight => { %>
                                 <option value="<%= weight.id %>"><%= weight.name %></option>
                                <% }) %>
                         </select>
+                        <span class="material-symbols-outlined danger" id="iconWeight">
+                            cancel
+                        </span>
+                        <span id="errorWeight" class="danger"></span>
                    </fieldset>
+                   <% if (locals.errors && errors.weight) { %>
+                    <span class="danger">
+                        <span class="material-symbols-outlined">
+                            cancel
+                        </span>  <%= errors.weight.msg %>
+                    </span>
+                    <% } %>
 
                    <fieldset>
                         <label for="stock">Cantidad:</label>
-                        <input type="number" name="stock" id="stock" required class="input-registro">
+                        <input type="number" name="stock" id="stock" min="0"  class="input-registro <%= locals.errors && errors.stock ? 'is-invalid' : null%>"
+                        value="<%= locals.oldData ? oldData.stock : null%>">
+                        <span class="material-symbols-outlined danger" id="iconStock">
+                            cancel
+                        </span>
+                        <span id="errorStock" class="danger"></span>
                     </fieldset>
+                    <% if (locals.errors && errors.stock) { %>
+                        <span class="danger">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span>  <%= errors.stock.msg %>
+                        </span>
+                    <% } %>
+                
 
                    <fieldset>
                     <label for="category">Categoría:</label>
-                    <select name="category" id="category" class="input-registro">
+                    <select name="category" id="category" class="input-registro <%= locals.errors && errors.category ? 'is-invalid' : null%>"
+                        value="<%= locals.oldData ? oldData.category : null%>">
                         <% category.forEach(category => { %>
                             <option value="<%= category.id %>"><%= category.name %></option>
                            <% }) %>
                     </select>
                     </fieldset>
+                    <% if (locals.errors && errors.category) { %>
+                        <span class="danger">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span>  <%= errors.category.msg %>
+                        </span>
+                    <% } %>
 
                     <fieldset>
                         <label for="information">Información:</label>
-                        <textarea name="information" id="information" cols="30" rows="5" required class="input-registro"></textarea>
+                        <textarea name="information" id="information" cols="30" rows="5"  class="input-registro <%= locals.errors && errors.information ? 'is-invalid' : null%>"
+                            value="<%= locals.oldData ? oldData.information : null%>"></textarea>
+                            <span class="material-symbols-outlined danger" id="iconInformation">
+                                cancel
+                            </span>
+                            <span id="errorInformation" class="danger"></span>
                     </fieldset>
+                    <% if (locals.errors && errors.information) { %>
+                        <span class="danger">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span>  <%= errors.information.msg %>
+                        </span>
+                    <% } %>
 
                     <fieldset>
                         <label for="packaging">Packaging:</label>
-                        <textarea name="packaging" id="packaging" cols="30" rows="5" required class="input-registro"></textarea>
+                        <textarea name="packaging" id="packaging" cols="30" rows="5"  class="input-registro <%= locals.errors && errors.packaging ? 'is-invalid' : null%>"
+                            value="<%= locals.oldData ? oldData.packaging : null%>"></textarea>
+                            <span class="material-symbols-outlined danger" id="iconPackaging">
+                                cancel
+                            </span>
+                            <span id="errorPackaging" class="danger"></span>
                     </fieldset>
+                    <% if (locals.errors && errors.packaging) { %>
+                        <span class="danger">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span>  <%= errors.packaging.msg %>
+                        </span>
+                    <% } %>
     
                     <fieldset>
                         <label for="image">Imagen:</label>
-                        <input type="file" name="image" id="image" required class="input-registro">
+                        <input type="file" name="image" id="image"  class="input-registro <%= locals.errors && errors.image ? 'is-invalid' : null%>"
+                        value="<%= locals.oldData ? oldData.image : null%>">
+                        <img src="" alt="" id="preview">
+                        <span class="material-symbols-outlined danger" id="iconProduct">
+                            cancel
+                        </span>
+                        <span id="errorProduct" class="danger"></span>
                     </fieldset>
+                    <% if (locals.errors && errors.image) { %>
+                        <span class="danger">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span>  <%= errors.image.msg %>
+                        </span>
+                    <% } %>
     
                     <button type="submit" class="form-button">Crear</button>
                 </form>

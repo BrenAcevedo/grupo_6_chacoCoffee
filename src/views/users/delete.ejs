@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../includes/head')  %>
+</head>
+<body>
+
+    <%- include('../includes/header')  %>
+
+    <main>
+        <section>
+            <section class="header-form background-form">
+                <h3 class="g-title">Eliminar cuenta</h3>
+                <p class="detail">La elimincación de la cuenta es definitiva. Si eliminas tu cuenta de ChaCoffe, no podrás recuperar 
+                    el contenido ni la información guardada en ella. 
+                </p>
+                <p class="detail">Si no estás seguro, puedes ir al Inicio</p>
+                <a href="/"  class="buy-button highlight">Ir al inicio</a>
+                <form action="/user/<%= user.id %>?m=DELETE" method="POST">
+                    <button type="submit" class="form-button">Eliminar cuenta</button>
+                </form>
+                
+            </section>
+            
+            
+        </section>
+    </main>
+
+    <%- include('../includes/footer')  %>
+</body>
+</html>
+    

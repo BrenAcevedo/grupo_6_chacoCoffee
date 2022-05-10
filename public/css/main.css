@@ -4,6 +4,159 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.index {
+    display: none;
+}
+
+.load {
+    display: flex;
+    background-color: rgb(226, 219, 219);
+    width: 100%;
+    height: 100vh;
+}
+
+.loader {
+    margin: auto;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #ff9c59;
+    border-right: 16px solid black;
+    border-bottom: 16px solid #176085;
+    border-left: 16px solid white;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+#menu {
+    display: block;
+    visibility: hidden;
+    width: 0%;
+    height: 0vh;
+    background-color: #ff9c59;
+}
+
+.menu-link {
+    display: inline-block;
+}
+
+.menu-link a {
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    padding-left: 33.33vw;
+    margin: 10px 0;
+}
+
+#boton-menu2 {
+    visibility: hidden;
+    margin-left: -90%;
+}
+
+#cancel-menu {
+    font-size: 30px;
+}
+
+
+
+#longitudI, #minusculaI, #mayusculaI, #numeroI, #simboloI {
+    font-size: 20px;
+    color: black;
+}
+
+#minuscula, #longitud, #mayuscula, #numero, #simbolo {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+#preview {
+    width: 250px;
+}
+
+#iconName, #iconLastName, #iconEmail, #iconAddress, #iconPassword, #iconConfirmPassword, #iconAvatar, #iconProductName, #iconPrice, #iconDescription, #iconVariety, #iconSmell, #iconOrigin, #iconDetail, #iconWeight, #iconStock, #iconInformation, #iconPackaging, #iconProduct {
+    visibility: hidden;
+}
+
+
+.danger {
+    font-size: 20px;
+    color: red;
+}
+
+.material-symbols-outlined {
+    font-size: 20px;
+}
+
+
+.filter-products {
+    display: flex;
+    justify-content: space-around;
+   
+}
+
+.filter-products select{
+    border: none;
+}
+
+.remove {
+    display: flex;
+}
+
+.profile {
+    margin: 20px 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.datos {
+    margin: 20px 20px;
+    text-align: left;
+}
+
+.datos p, .suggestion {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.datos span {
+    font-weight: bold;
+}
+
+.imgPerfil img {
+    max-width: 80%;
+    border: 2px solid #3B90EC;
+    border-radius: 50px;
+}
+
+.delete-account {
+
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
 .banner img {
     width: 100%;
 }
@@ -248,13 +401,10 @@ fieldset {
     border-radius: 5px;
 }
 
-.form-registro .is-invalid {
+.form-registro .is-invalid, .form-login .is-invalid {
     border-color: red;
  }
 
- .is-invalido {
-    border-color: red;
- }
 
 .input-registro, textarea {
     width: 100%;
@@ -385,6 +535,27 @@ fieldset {
 }
 
 @media (min-width: 768px) {
+
+    .img-detail img {
+        max-width: 550px;
+    }
+
+    .profile {
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+    }
+
+   .datos p{
+       margin: 10px;
+       padding: 10px;
+   }
+
+   .imgPerfil img {
+    max-width: 450px;
+    border: 2px solid #3B90EC;
+    border-radius: 50px;
+    }
 
     .featured h3, .about-us h3, .g-title {
         font-size: 2.5rem;
@@ -526,7 +697,7 @@ fieldset {
 
 
     .quantity input {
-        width: 50px;
+        width: 35px;
         font-size: 20px;
 
     }

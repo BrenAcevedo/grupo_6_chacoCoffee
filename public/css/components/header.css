@@ -155,6 +155,19 @@
         display: none;
     }
 
+    #menu {
+        display: none;
+    }
+    
+    .menu-link {
+        display: none;
+    }
+    
+    .menu-link a {
+        display: none;
+    }
+   
+
     .main-navbar {
         display: flex;
         justify-content:space-evenly;

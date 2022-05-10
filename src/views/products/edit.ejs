@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../includes/head')  %>
+    <script src="/js/productValidation.js"></script>
 </head>
 <body>
 
@@ -9,52 +10,120 @@
     <article class="header-form">
         <h3 class="g-title">Editar producto</h2>
     </article>
-    <main class="edit-product">
-        <form action="/products/<%= product.id %>?m=PUT" enctype="multipart/form-data" method="POST" class="form-edit form-edicion">
+    <main>
+        <form action="/products/<%= product.id %>?m=PUT" enctype="multipart/form-data" method="POST" class="form-registro form-edit" id="productForm">
             <input type="hidden" name="id" value="<%= product.id %>">
-            <section class="product-description">
-                <article>
-                    <section>
-                        <img src="/products/<%= product.imageId.url %>" alt="Cafe de colombia">
-                    </section>
-                    <input type="file" name="image" id="image" class="input-registro">
-                </article>
-                <article>
-                    <section class="detail">
                         <fieldset>
-                            <label for="name"><h3 class="name-detail">Nombre: <%= product.name %></h3></label>
+                            <label for="name"><p><span>Nombre: </span><%= product.name %></p></label>
                             <input type="text" name="name" id="name" class="input-registro" value="<%= product.name %>">
+                            <span class="material-symbols-outlined danger" id="iconProductName">
+                                cancel
+                            </span>
+                            <span id="errorProductName" class="danger"></span>
                         </fieldset>
+                        <% if (locals.errors && errors.name) { %>
+                            <span class="danger">
+                                <span class="material-symbols-outlined">
+                                    cancel
+                                </span>  <%= errors.name.msg %>
+                            </span>
+                        <% } %>
 
                         <fieldset>
-                            <label for="price"><p class="price price-detail">Precio: $<%= product.price %></p></label>
+                            <label for="price"><p><span>Precio: $</span><%= product.price %></p></label>
                             <input type="number" name="price" id="price" class="input-registro" value="<%= product.price %>">
+                            <span class="material-symbols-outlined danger" id="iconPrice">
+                                cancel
+                            </span>
+                            <span id="errorPrice" class="danger"></span>
                         </fieldset>
+                        <% if (locals.errors && errors.price) { %>
+                            <span class="danger">
+                                <span class="material-symbols-outlined">
+                                    cancel
+                                </span>  <%= errors.price.msg %>
+                            </span>
+                        <% } %>
 
                         <fieldset>
                             <label for="description"><p><span>Descripción: </span> <%= product.description %></p></label>
                             <textarea name="description" id="description" cols="30" rows="2" class="input-registro"><%= product.description%></textarea>
+                            <span class="material-symbols-outlined danger" id="iconDescription">
+                                cancel
+                            </span>
+                            <span id="errorDescription" class="danger"></span>
                         </fieldset>
+                        <% if (locals.errors && errors.description) { %>
+                            <span class="danger">
+                                <span class="material-symbols-outlined">
+                                    cancel
+                                </span>  <%= errors.description.msg %>
+                            </span>
+                        <% } %>
 
                         <fieldset>
                             <label for="variety"><p><span>Variedad: </span> <%= product.variety %></p></label>
                             <input type="text" name="variety" id="variety" value="<%= product.variety %>" class="input-registro">
+                            <span class="material-symbols-outlined danger" id="iconVariety">
+                                cancel
+                            </span>
+                            <span id="errorVariety" class="danger"></span>
                         </fieldset>
+                        <% if (locals.errors && errors.variety) { %>
+                            <span class="danger">
+                                <span class="material-symbols-outlined">
+                                    cancel
+                                </span>  <%= errors.variety.msg %>
+                            </span>
+                        <% } %>
                         
                         <fieldset>
                            <label for="smell"><p><span>Aspeco olfativo: </span><%= product.smell %></p></label>
                            <input type="text" name="smell" id="smell" value="<%= product.smell %>" class="input-registro">
+                           <span class="material-symbols-outlined danger" id="iconSmell">
+                            cancel
+                            </span>
+                        <span id="errorSmell" class="danger"></span>
                         </fieldset>
+                        <% if (locals.errors && errors.smell) { %>
+                            <span class="danger">
+                                <span class="material-symbols-outlined">
+                                    cancel
+                                </span>  <%= errors.smell.msg %>
+                            </span>
+                        <% } %>
 
                         <fieldset>
                             <label for="origin"><p><span>Origen: </span><%= product.origin %></p></label>
                             <input type="text" name="origin" id="origin" value="<%= product.origin %>" class="input-registro">
-                         </fieldset>
+                            <span class="material-symbols-outlined danger" id="iconOrigin">
+                                cancel
+                            </span>
+                            <span id="errorOrigin" class="danger"></span>
+                        </fieldset>
+                         <% if (locals.errors && errors.origin) { %>
+                            <span class="danger">
+                                <span class="material-symbols-outlined">
+                                    cancel
+                                </span>  <%= errors.origin.msg %>
+                            </span>
+                        <% } %>
 
                          <fieldset>
                             <label for="detail"><p><span>Reseña: </span><%= product.detail %></p></label>
                             <input type="text" name="detail" id="detail" value="<%= product.detail %>" class="input-registro">
-                         </fieldset>
+                            <span class="material-symbols-outlined danger" id="iconDetail">
+                                cancel
+                            </span>
+                            <span id="errorDetail" class="danger"></span>
+                        </fieldset>
+                         <% if (locals.errors && errors.detail) { %>
+                            <span class="danger">
+                                <span class="material-symbols-outlined">
+                                    cancel
+                                </span>  <%= errors.detail.msg %>
+                            </span>
+                        <% } %>
 
                          <fieldset>
                             <label for="brand"><p><span>Marca: </span><%= product.brandId.name %></p></label>
@@ -66,6 +135,13 @@
                                    <% }) %>
                             </select>
                          </fieldset>
+                         <% if (locals.errors && errors.brand) { %>
+                            <span class="danger">
+                                <span class="material-symbols-outlined">
+                                    cancel
+                                </span>  <%= errors.brand.msg %>
+                            </span>
+                        <% } %>
 
                         <fieldset> 
                             <label for="weight"><span><p>Pesos actuales:<% product.weights.forEach(element => { %>
@@ -79,15 +155,37 @@
                                    <% }) %>
                                    
                             </select>
-                       </fieldset>
+                            <span class="material-symbols-outlined danger" id="iconWeight">
+                                cancel
+                            </span>
+                            <span id="errorWeight" class="danger"></span>
+                        </fieldset>
+                       <% if (locals.errors && errors.weight) { %>
+                        <span class="danger">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span>  <%= errors.weight.msg %>
+                        </span>
+                    <% } %>
                        
                        <fieldset>
                             <label for="stock"><span><p>Cantidad:</p></span></label>
                             <input type="number" name="stock" id="stock" value="<%= product.stock %>" class="input-registro">
+                            <span class="material-symbols-outlined danger" id="iconStock">
+                                cancel
+                            </span>
+                            <span id="errorStock" class="danger"></span>
                         </fieldset>
+                        <% if (locals.errors && errors.stock) { %>
+                            <span class="danger">
+                                <span class="material-symbols-outlined">
+                                    cancel
+                                </span>  <%= errors.stock.msg %>
+                            </span>
+                        <% } %>
 
                         <fieldset>
-                            <label for="category"><p><span>Marca: </span><%= product.categoryId.name %></p></label>
+                            <label for="category"><p><span>Categoría: </span><%= product.categoryId.name %></p></label>
                             <select name="category" id="category" class="input-registro">
                                 <% category.forEach(category => { %>
                                     <option value="<%= category.id %>" <% if (product.categoryId.name == category.name) { %>
@@ -96,24 +194,65 @@
                                    <% }) %>
                             </select>
                          </fieldset>
-    
-                       
-                    </section>
-                </article>
-            </section>
+                         <% if (locals.errors && errors.category) { %>
+                            <span class="danger">
+                                <span class="material-symbols-outlined">
+                                    cancel
+                                </span>  <%= errors.category.msg %>
+                            </span>
+                        <% } %>
             <fieldset>
                 <label for="information">
                     <h4 class="subtitle">Información detallada - <%= product.nombre %></h4>
                 </label>
                 <textarea name="information" id="information" cols="60" rows="5"><%= product.information %></textarea>
+                <span class="material-symbols-outlined danger" id="iconInformation">
+                    cancel
+                </span>
+                <span id="errorInformation" class="danger"></span>
             </fieldset>
+            <% if (locals.errors && errors.information) { %>
+                <span class="danger">
+                    <span class="material-symbols-outlined">
+                        cancel
+                    </span>  <%= errors.information.msg %>
+                </span>
+            <% } %>
             
             <fieldset>
                 <label for="packaging">
                     <h4 class="subtitle">Packaging</h4>
                 </label>
                 <textarea name="packaging" id="packaging" cols="120" rows="5"><%= product.packaging %></textarea>
+                <span class="material-symbols-outlined danger" id="iconPackaging">
+                    cancel
+                </span>
+                <span id="errorPackaging" class="danger"></span>
             </fieldset>
+            <% if (locals.errors && errors.packaging) { %>
+                <span class="danger">
+                    <span class="material-symbols-outlined">
+                        cancel
+                    </span>  <%= errors.packaging.msg %>
+                </span>
+            <% } %>
+
+          <fieldset>
+            <img src="/products/<%= product.imageId.url %>" alt="<%= product.name %> ">
+            <input type="file" name="image" id="image" class="input-registro">
+            <span class="material-symbols-outlined danger" id="iconProduct">
+                cancel
+            </span>
+            <span id="errorProduct" class="danger"></span>
+          </fieldset>
+                
+                <% if (locals.errors && errors.image) { %>
+                    <span class="danger">
+                        <span class="material-symbols-outlined">
+                            cancel
+                        </span>  <%= errors.image.msg %>
+                    </span>
+                <% } %>
             <button type="submit" class="form-button">Editar</button>
         </form>
         

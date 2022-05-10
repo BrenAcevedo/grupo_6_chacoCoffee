@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../includes/head')  %>
+    <script src="/js/registerValidation.js"></script>
 </head>
 <body>
 
@@ -13,38 +14,105 @@
                 <h3 class="g-title">Editar perfil</h3>
             </article>
             <section>
-                <form action="/user/<%= user.id %>?m=PUT" method="POST" enctype="multipart/form-data" class="form-registro">
+                <form action="/user/<%= user.id %>?m=PUT" method="POST" enctype="multipart/form-data" class="form-registro" id="userRegister">
                     <fieldset>
                         <label for="name">Nombre:</label>
                         <input type="text" name="name" id="name"  class="input-registro" value="<%= user.name %>">
+                        <span class="material-symbols-outlined danger" id="iconName">
+                            cancel
+                        </span>
+                        <span id="errorName" class="danger"></span>
                     </fieldset>
+
+                    <% if (locals.errors && errors.name) { %>
+                        <span class="danger">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span> <%= errors.name.msg %>
+                        </span>
+                    <% } %>
+                   
                     
                     <fieldset>
                         <label for="lastName">Apellido:</label>
                         <input type="text" name="lastName" id="lastName"  class="input-registro" value="<%= user.lastName %>">
+                        <span class="material-symbols-outlined danger" id="iconLastName">
+                            cancel
+                        </span>
+                        <span id="errorLastName" class="danger"></span>
                     </fieldset>
+                    
 
                     <fieldset>
                         <label for="email">Correo electrónico:</label>
                         <input type="text" name="email" id="email"  class="input-registro" value="<%= user.email %>">
+                        <span class="material-symbols-outlined danger" id="iconEmail">
+                            cancel
+                        </span>
+                        <span id="errorEmail" class="danger"></span>
                     </fieldset>
+                    
 
                     <fieldset>
                         <label for="address">Domicilio (Calle y Altura):</label>
                         <input type="text" name="address" id="address"  class="input-registro" value="<%= user.address %>">
+                        <span class="material-symbols-outlined danger" id="iconAddress">
+                            cancel
+                        </span>
+                        <span id="errorAddress" class="danger"></span>
                     </fieldset>
+                    
                   
                    
                     <fieldset>
-                        <label for="password">Nueva Contraseña:</label>
+                        <label for="password">Ingrese su contraseña:</label>
                         <input type="password" name="password" class="input-registro" id="password">
+                        <span class="material-symbols-outlined danger" id="iconPassword">
+                            cancel
+                        </span>
+                        <span id="errorPassword" class="danger"></span>
+                        <p id="minuscula"><i id="minusculaI" class="material-symbols-outlined">cancel</i> 1 letra minúscula</p>
+                        <p id="mayuscula"><i id="mayusculaI" class="material-symbols-outlined">cancel</i> 1 letra mayúscula</p>
+                        <p id="simbolo"><i id="simboloI" class="material-symbols-outlined">cancel</i> 1 carácter especial</p>
+                        <p id="numero"><i id="numeroI" class="material-symbols-outlined">cancel</i> 1 número</p>
+                        <p id="longitud"><i id="longitudI" class="material-symbols-outlined">cancel</i> La contraseña debe tener al menos 8 caracteres</p>
                     </fieldset>
+
+                    <% if (locals.errors && errors.password) { %>
+                        <span class="danger">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span> <%= errors.password.msg %>
+                        </span>
+                    <% } %>
+                   
+                    <fieldset>
+                        <label for="confirmPassword">Confirmar contraseña:</label>
+                        <input type="password" name="confirmPassword" id="confirmPassword"  class="input-registro <%= locals.errors && errors.confirmPassword ? 'is-invalid' : null%>">
+                        <span class="material-symbols-outlined danger" id="iconConfirmPassword">
+                            cancel
+                        </span>
+                        <span id="errorConfirmPassword" class="danger"></span>
+                    </fieldset>
+
 
 
                     <fieldset>
                         <label for="avatar">Imagen de perfil:</label>
                         <input type="file" name="avatar" id="avatar">
+                        <span class="material-symbols-outlined danger" id="iconAvatar">
+                            cancel
+                        </span>
+                        <span id="errorAvatar" class="danger"></span>
                     </fieldset>
+                    <% if (locals.errors && errors.avatar) { %>
+                        <span class="danger">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span> <%= errors.avatar.msg %>
+                        </span>
+                    <% } %>
+                    
     
     
                     <button type="submit" class="form-button">Editar perfil</button>

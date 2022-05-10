@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../includes/head')  %>
+    <script src="/js/loginValidation.js"></script>
 </head>
 <body>
 
@@ -11,33 +12,49 @@
         <section>
             <header class="header-form background-form">
                 <h3 class="g-title">Acceder</h3>
-                <p class="detail">¡Hola! Ingresá tu e-mail o usuario y contraseña</p>
+                <p class="detail">¡Hola! Ingresá tu e-mail y contraseña</p>
                 <p class="detail">¿No tienes una cuenta? <a href="/user/register">¡Registrate!</a></p>
             </header>
-            <form action="/user/login" method="POST" class="form-login">
+            <form action="/user/login" method="POST" class="form-login" id="userLogin">
                 <fieldset>
                     <label for="email">Correo electrónico:</label>
-                    <input type="text" name="email" id="email" class="input-registro">
-                    <% if (locals.errors && errors.email) { %>
-                        <div class="danger">
-                            <%= errors.email.msg %> 
-                        </div>
-                    <% } %>
-                    <label for="password">Contraseña:</label>
-                    <input type="password" name="password" id="password" class="input-registro">
-                    <% if (locals.errors && errors.pass) { %>
-                        <div class="danger">
-                            <%= errors.pass.msg %> 
-                        </div>
-                    <% } %>
+                    <input type="text" name="email" id="email" class="input-registro <%= locals.errors && errors.email ? 'is-invalid' : null%>"
+                    value="<%= locals.oldData ? oldData.email : null%>"
+                    >
+                    <span class="material-symbols-outlined danger" id="iconEmail">
+                        cancel
+                    </span>
+                    <span id="errorEmail" class="danger"></span>
                 </fieldset>
+                    <% if (locals.errors && errors.email) { %>
+                        <span class="danger">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span><%= errors.email.msg %> 
+                        </span>
+                    <% } %>
+                <fieldset>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" name="password" id="password" class="input-registro <%= locals.errors && errors.email ? 'is-invalid' : null%>">
+                    <span class="material-symbols-outlined danger" id="iconPassword">
+                        cancel
+                    </span>
+                    <span id="errorPassword" class="danger"></span>
+                </fieldset>
+                    <% if (locals.errors && errors.password) { %>
+                        <span class="danger">
+                            <span class="material-symbols-outlined">
+                                cancel
+                            </span><%= errors.password.msg %> 
+                        </span>
+                    <% } %>
                 <fieldset class="remember-pass">
                     <input type="checkbox" name="remember_user" id="remember_user" value="recuerdame">
                     <label for="recuerdame">Recordar contraseña</label>
                 </fieldset>
                 <button type="submit" class="form-button">Ingresar</button>
             </form>
-            <footer class="reset-pass"><a class="reset-pass" href="/">¿Olvidaste tu contraseña?</a></footer>
+            <footer class="reset-pass"><a class="reset-pass" href="#">¿Olvidaste tu contraseña?</a></footer>
         </section>
     </main>
 

@@ -3,34 +3,10 @@ const {resolve} = require('express');
 const req = require('express/lib/request');
 const {Product, Brand, Category, Image, Weight} = require('../database/models');
 const db = require('../database/models');
-const Sequelize = require('sequelize')
-const Op = Sequelize.Op;
+const { validationResult } = require('express-validator'); 
 
 
 module.exports = {
-    search: async (req, res) => {
-        try {
-            let queryString = req.query;
-            let termino = Object.values(queryString);
-            let busqueda = termino.toString();
-            
-            const products = await Product.findAll({include: {all: true}},{
-                where: {
-                    [Op.or]: [
-                    {name: {[Op.like]: `%${busqueda}%`}},
-                    {description: {[Op.like]: `%${busqueda}%`}},
-                    ]                    
-                }
-            });
-            const brand = await Brand.findAll({include: {all: true}});
-            const image = await Image.findAll({include: {all: true}});
-            res.render('search', {products:products, image:image});
-           
-        }
-        catch (error) {
-            res.status(500).send({message: error.message});
-        }
-    },
     create: async (req, res) => {
         try {
             
@@ -53,8 +29,25 @@ module.exports = {
     storage: async (req, res) => {
         try {
 
+            const brand = await Brand.findAll();
+            const category = await Category.findAll();
+            const weight = await Weight.findAll();
+
+            const resultValidation = validationResult(req);
+
+            if (resultValidation.errors.length > 0) {  
+                return res.render('products/create', {
+                    brand: brand,
+                    weight:weight,
+                    category:category,
+                    title: 'Crear producto',
+                    errors: resultValidation.mapped(),
+                    oldData: req.body, 
+                });
+            }
+
             let image = await Image.create({
-                url: req.files[0].filename
+                url: req.file.filename
             });
 
             let product = await Product.create({
@@ -76,7 +69,7 @@ module.exports = {
             let weights = req.body.weight     
             await product.addWeights(weights);
      
-           res.send(product);
+            res.redirect('/products');
 
         }
         catch (error) {
@@ -111,10 +104,31 @@ module.exports = {
    edit: async (req,res) => {
         try {
  
-            let product = await Product.findByPk(req.params.id);
+            const brand = await Brand.findAll();
+            const category = await Category.findAll();
+            const weight = await Weight.findAll();
+            const images = await Image.findAll();
+            const product = await Product.findByPk(req.params.id, {include: {all: true}} );
+
+
+            const resultValidation = validationResult(req);
+
+            if (resultValidation.errors.length > 0) {  
+                return res.render('products/edit', {
+                    product:product,
+                    brand: brand,
+                    weight:weight,
+                    category:category,
+                    images:images,
+                    title: 'Editar producto',
+                    errors: resultValidation.mapped(),
+                    oldData: req.body, 
+                });
+            }
+
 
             let image = await Image.create({
-                url: req.files[0].filename
+                url: req.file.filename
             });
 
             
@@ -142,7 +156,7 @@ module.exports = {
             await product.addWeights(weights);
 
 
-           res.send(product);
+            res.redirect('/products/'+req.body.id)
 
         }
         catch (error) {
@@ -160,14 +174,14 @@ module.exports = {
  
            
             
-            res.render('products/detail', {
+           return product ? res.render('products/detail', {
                 product:product,
                 brand: brand,
                 weight:weight,
                 category:category,
                 image:image,
                 title: 'Detalle del producto',
-                })
+                }) : res.render('error')
 
         }
         catch (error) {
@@ -201,17 +215,25 @@ module.exports = {
     //     update(req.body);
     //     return res.redirect('/products/'+req.body.id);
     // }, 
-    list: (req,res) => res.render('products/products', {
-        title: 'Listado de Productos',
-        productos: all(),
-    }),
+    list: async (req,res) => {
+        try {
+            const products = await Product.findAll({include: {all: true}});
+
+            res.render('products/products', {
+                products: products,
+                title: 'Listado de productos',
+            })
+        } catch (error) {
+            return res.send(error)
+        }
+    },
     remove: async (req,res) => {
         try {
             let product = await Product.findByPk(req.params.id);
             
             await product.destroy()
            
-            res.render('/products');
+            res.redirect('/products');
         } catch (error) {
             return res.send(error)
         }

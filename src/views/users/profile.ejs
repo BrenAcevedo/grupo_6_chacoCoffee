@@ -8,14 +8,22 @@
     <%- include('../includes/header')  %>
 
     <main>
-        <h1>Bienvenido <%= locals.userLogged.name %> </h1>
-        <p>Correo electrónico: <%= locals.userLogged.email %> </p>
-        <nav>
-            <a href="/user/<%= user.id %>/edit" class="buy-button">Editar perfil</a>
-        </nav>
-        <form action="/user/<%= user.id %>?m=DELETE" method="POST">
-            <button type="submit" class="buy-button">Eliminar cuenta</button>
-        </form>
+        <section class="featured"><h3>Mi cuenta</h3></section>
+        <section class="profile">
+            <section class="imgPerfil">
+                <figure><img src="/avatars/<%= user.image.url %>" alt=""></figure>
+            </section>
+            <section class="datos">
+                <p><span>Nombre: </span><%= user.name %></p>
+                <p><span>Apellido: </span><%= user.lastName %></p>
+                <p><span>Correo eléctronico: </span><%= user.email %></p>
+                <p><span>Dirección: </span><%= user.address %></p>
+                <nav>
+                    <a href="/user/<%= user.id %>/edit" class="buy-button">Editar perfil</a>
+                    <a href="/user/<%= user.id %>/delete" class="buy-button">Eliminar cuenta</a>
+                </nav>
+            </section>
+        </section>
     </main>
 
     <%- include('../includes/footer')  %>
